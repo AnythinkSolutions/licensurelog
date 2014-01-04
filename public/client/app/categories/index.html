@@ -1,0 +1,78 @@
+<h2>
+    <span>Categories</span>
+    <div class="pull-right">
+        <a href="#categories/add" class="btn btn-primary">
+            <i class="icon-plus"></i> New
+        </a>
+    </div>
+</h2>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Certification</th>
+        <th>Required</th>
+        <th>Maximum</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+
+    <tbody>
+        <tr ng-repeat-start="cat in categories">
+            <td><a href="#/categories/{{cat.id}}">{{cat.name}}</a></td>
+            <td>{{cat.description}}</td>
+            <td><a href="#/certifications/{{cat.certification.id}}">{{cat.certification.name}}</a></td>
+            <td>{{cat.required_hours}}</td>
+            <td>{{cat.cap}}</td>
+            <td>
+                <a class="btn btn-default" href="#/categories/edit/{{cat.id}}">Edit</a>
+                <a class="btn btn-default" href="#/categories/add?parent_id={{cat.id}}&cert_id={{cat.certification.id}}">New Sub</a>
+            </td>
+        </tr>
+        <tr ng-repeat-start="subcat in cat.subcategories">
+            <td><a style="margin-left:15px;" href="#/categories/{{subcat.id}}">{{subcat.name}}</a></td>
+            <td>{{subcat.description}}</td>
+            <td><a href="#/certifications/{{subcat.certification.id}}">{{subcat.certification.name}}</a></td>
+            <td>{{subcat.required_hours}}</td>
+            <td>{{subcat.cap}}</td>
+            <td>
+                <a class="btn btn-default" href="#/categories/edit/{{subcat.id}}">Edit</a>
+                <a class="btn btn-default" href="#/categories/add?parent_id={{subcat.id}}&cert_id={{subcat.certification.id}}">New Sub</a>
+            </td>
+        </tr>
+        <tr ng-repeat-start="sscat in subcat.subcategories">
+            <td><a style="margin-left:30px;" href="#/categories/{{sscat.id}}">{{sscat.name}}</a></td>
+            <td>{{sscat.description}}</td>
+            <td><a href="#/certifications/{{sscat.certification.id}}">{{sscat.certification.name}}</a></td>
+            <td>{{sscat.required_hours}}</td>
+            <td>{{sscat.cap}}</td>
+            <td>
+                <a class="btn btn-default" href="#/categories/edit/{{sscat.id}}">Edit</a>
+                <a class="btn btn-default" href="#/categories/add?parent_id={{sscat.id}}&cert_id={{sscat.certification.id}}">New Sub</a>
+            </td>
+        </tr>
+        <tr ng-visible="sscat.subcategories.length > 0" ng-repeat="ssscat in sscat.subcategories">
+            <td><a style="margin-left:45px;" href="#/categories/{{ssscat.id}}">{{ssscat.name}}</a></td>
+            <td>{{ssscat.description}}</td>
+            <td><a href="#/certifications/{{ssscat.certification.id}}">{{ssscat.certification.name}}</a></td>
+            <td>{{ssscat.required_hours}}</td>
+            <td>{{ssscat.cap}}</td>
+            <td>
+                <a class="btn btn-default" href="#/categories/edit/{{ssscat.id}}">Edit</a>
+                <a class="btn btn-default" href="#/categories/add?parent_id={{ssscat.id}}&cert_id={{ssscat.certification.id}}">New Sub</a>
+            </td>
+        </tr>
+        <tr ng-repeat-end></tr>
+        <tr ng-repeat-end></tr>
+        <tr ng-repeat-end></tr>
+    <!--<tr ng-visible="cat.subcategories" ng-repeat="subcat in cat.subcategories">-->
+        <!--<td colspan="6">-->
+            <!--<table class="tbl tbl-condensed" style="margin-left:20px;" >-->
+                <!---->
+            <!--</table>-->
+        <!--</td>-->
+    <!--</tr>-->
+    </tbody>
+</table>

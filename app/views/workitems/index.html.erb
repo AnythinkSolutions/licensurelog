@@ -1,0 +1,38 @@
+<h1>Listing workitems</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Category</th>
+      <th>Certification</th>
+      <th>Hours</th>
+      <th>Notes</th>
+      <th>Signed off</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @workitems.each do |workitem| %>
+      <tr>
+        <td><%= link_to workitem.date, workitem %></td>
+        <td><%= link_to workitem.category.name, workitem.category %></td>
+        <td><%= link_to workitem.certification.name, workitem.certification %></td>
+        <td><%= workitem.hours %></td>
+        <td><%= workitem.notes %></td>
+        <td><%= workitem.signed_off %></td>
+        <td><%= link_to 'Edit', edit_workitem_path(workitem) %></td>
+        <td><%= link_to 'Destroy', workitem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Workitem', new_workitem_path %>
+<%= link_to 'Certifications', certifications_path %>
+<%= link_to 'Categories', categories_path %>

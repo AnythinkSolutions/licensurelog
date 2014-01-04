@@ -1,0 +1,64 @@
+
+<h2>{{action}} Certification</h2>
+
+<form class="form-horizontal">
+    <div class="form-group">
+        <label class="control-label col-sm-2">Name</label>
+        <div class="col-sm-6">
+            <input ng-model="certification.name" class="form-control" placeholder="Certification Name"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2">Description</label>
+        <div class="col-sm-6">
+            <textarea ng-model="certification.description" class="form-control" placeholder="Certification Description" rows="4"/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2">Start Date</label>
+        <div class="col-sm-3">
+            <!--<div class="input-group">-->
+                <!--<input type="text" class="form-control" ng-model="begin_date" data-date-format="dd/mm/yyyy" bs-datepicker>-->
+                <!--<button type="button" class="input-group-addon" class="btn" data-toggle="datepicker"><i class="icon-calendar"></i></button>-->
+            <!--</div>-->
+            <div class="input-group">
+                <input type="date" class="form-control" ng-model="certification.begin_date" data-date-format="dd/mm/yyyy" bs-datepicker>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+            </div>
+
+            <!--<input ng-model="begin_date" class="form-control" placeholder="Start Date"/>-->
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2">Expiration Date</label>
+        <div class="col-sm-3">
+            <div class="input-group">
+                <input type="date" class="form-control" ng-model="certification.expire_date" data-date-format="dd/mm/yyyy" bs-datepicker>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+            </div>
+            <!--<input ng-model="expire_date" class="form-control" placeholder="Expiration Date"/>-->
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2">Goal Date</label>
+        <div class="col-sm-3">
+            <div class="input-group">
+                <input type="date" class="form-control" ng-model="certification.goal_date" data-date-format="dd/mm/yyyy" bs-datepicker>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+            </div>
+            <!--<input ng-model="goal_date" class="form-control" placeholder="Goal Date"/>-->
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <a href="#certifications" class="btn btn-default">
+                <i class="glyphicon glyphicon-arrow-left"></i> Cancel
+            </a>
+            <button class="btn btn-primary" ng-click="save()"><i class="glyphicon glyphicon-save"></i> Save</button>
+        </div>
+    </div>
+</form>

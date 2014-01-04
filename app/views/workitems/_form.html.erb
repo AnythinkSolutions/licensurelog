@@ -1,0 +1,45 @@
+<%= form_for(@workitem) do |f| %>
+  <% if @workitem.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@workitem.errors.count, "error") %> prohibited this workitem from being saved:</h2>
+
+      <ul>
+      <% @workitem.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.collection_select :user_id, User.all, :id, :name %>
+  </div>
+    <div class="field">
+      <%= f.label :certification_id %><br>
+      <%= f.collection_select :certification_id, Certification.all, :id, :name %>
+    </div>
+  <div class="field">
+    <%= f.label :category_id %><br>
+    <%= f.collection_select :category_id, Category.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :hours %><br>
+    <%= f.text_field :hours %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br>
+    <%= f.text_area :notes %>
+  </div>
+  <div class="field">
+    <%= f.label :signed_off %><br>
+    <%= f.check_box :signed_off %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

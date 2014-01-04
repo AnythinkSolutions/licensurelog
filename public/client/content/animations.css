@@ -1,0 +1,78 @@
+.certification-item-panel .ng-enter, .certification-item-panel .ng-leave, .certification-item-panel .ng-move {
+  -webkit-transition: 0.5s linear all;
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  transition: 0.5s linear all; }
+.certification-item-panel .ng-enter, .certification-item-panel .ng-move {
+  opacity: 0;
+  height: 0;
+  overflow: hidden; }
+.certification-item-panel .ng-move.ng-move-active,
+.certification-item-panel .ng-enter.ng-enter-active {
+  opacity: 1; }
+.certification-item-panel .ng-leave {
+  opacity: 1;
+  overflow: hidden; }
+.certification-item-panel .ng-leave.ng-leave-active {
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0; }
+
+.view-container {
+  position: relative; }
+
+.view-frame {
+  @keyframes fade-in {
+    from {
+      opacity: 0; }
+
+    to {
+      opacity: 1; } }
+
+  @-moz-keyframes fade-in {
+    from {
+      opacity: 0; }
+
+    to {
+      opacity: 1; } }
+
+  @-webkit-keyframes fade-in {
+    from {
+      opacity: 0; }
+
+    to {
+      opacity: 1; } }
+
+  @keyframes fade-out {
+    from {
+      opacity: 1; }
+
+    to {
+      opacity: 0; } }
+
+  @-moz-keyframes fade-out {
+    from {
+      opacity: 1; }
+
+    to {
+      opacity: 0; } }
+
+  @-webkit-keyframes fade-out {
+    from {
+      opacity: 1; }
+
+    to {
+      opacity: 0; } }
+ }
+  .view-frame .ng-enter {
+    -webkit-animation: 0.5s fade-in;
+    -moz-animation: 0.5s fade-in;
+    -o-animation: 0.5s fade-in;
+    animation: 0.5s fade-in;
+    z-index: 100; }
+  .view-frame .ng-leave {
+    -webkit-animation: 0.5s fade-out;
+    -moz-animation: 0.5s fade-out;
+    -o-animation: 0.5s fade-out;
+    animation: 0.5s fade-out;
+    z-index: 99; }

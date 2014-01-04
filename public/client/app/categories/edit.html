@@ -1,0 +1,71 @@
+
+<h2>{{action}} Category</h2>
+
+<form class="form-horizontal">
+    <div class="form-group">
+        <label class="control-label col-sm-2">Name</label>
+        <div class="col-sm-6">
+            <input ng-model="category.name" class="form-control" placeholder="Category Name"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2">Description</label>
+        <div class="col-sm-6">
+            <textarea ng-model="category.description" class="form-control" placeholder="Category Description" rows="4"/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2">Certification</label>
+        <div class="col-sm-3">
+            <select ng-model="category.certification_id" ng-options="cert.id as cert.name for cert in certifications"></select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2">Category Group</label>
+        <div class="col-sm-3">
+            <label class="label-checkbox" style="float:left;">
+                <input type="checkbox" ng-model="category.is_group">
+                <span class="custom-checkbox"></span>
+            </label>
+            <!--<input type="checkbox" ng-checked="category.is_group"/>-->
+            <i class="fa fa-question-circle" style="margin-top:10px;margin-left:5px;" title="Category Groups allow you to roll-up hours into a category"></i>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2">Parent Category</label>
+        <div class="col-sm-3">
+            <select ng-model="category.parent_id" ng-options="cat.id as cat.name for cat in categories"></select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2">Required Hours</label>
+        <div class="col-sm-3">
+            <div class="input-group">
+                <input type="number" class="form-control" ng-model="category.required_hours">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2">Maximum Hours</label>
+        <div class="col-sm-3">
+            <div class="input-group">
+                <input type="number" class="form-control" ng-model="category.cap">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <a href="#categories" class="btn btn-default">
+                <i class="glyphicon glyphicon-arrow-left"></i> Cancel
+            </a>
+            <button class="btn btn-primary" ng-click="save()"><i class="glyphicon glyphicon-save"></i> Save</button>
+        </div>
+    </div>
+
+</form>

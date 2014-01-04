@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-md-12">
+        <h4 class="headline m-top-md">
+            Licenses
+            <div class="pull-right">
+                <a href="#certifications/add" class="btn btn-sm btn-primary">
+                    <i class="fa fa-plus"></i> New
+                </a>
+            </div>
+            <span class="line"></span>
+        </h4>
+    </div>
+</div>
+        <!--<br/>-->
+        <!--Search: <input ng-model="query"/>-->
+        <!--Sort by: <select ng-model="orderProp">-->
+        <!--<option value="name">Alphabetical</option>-->
+        <!--<option value="begin_date">Started</option>-->
+        <!--<option value="goal_date">Goal</option>-->
+        <!--<option value="expire_date">Expires</option>-->
+        <!--</select>-->
+<div class="row">
+    <div class="col-md-11">
+    <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Begin date</th>
+                <th>Goal date</th>
+                <th>Expire date</th>
+                <th>Notes</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr ng-repeat="cert in certifications | filter:query |orderBy:orderProp">
+                <td><a href="#/certifications/{{cert.id}}">{{cert.name}}</a></td>
+                <td>{{cert.description}}</td>
+                <td>{{cert.begin_date}}</td>
+                <td>{{cert.goal_date}}</td>
+                <td>{{cert.expire_date}}</td>
+                <td>{{cert.notes}}</td>
+                <td><a href="#/certifications/edit/{{cert.id}}" class="btn btn-default">Edit</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

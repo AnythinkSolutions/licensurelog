@@ -1,0 +1,50 @@
+.heading-inline {
+  display: inline-block; }
+
+.panel-mini {
+  margin: 5px 10px;
+  border: 1px solid darkgray; }
+  .panel-mini .panel-mini-heading {
+    border-bottom: 1px solid darkgray;
+    padding: 2.5px 5px;
+    font-size: 0.65em; }
+  .panel-mini .panel-mini-body {
+    padding: 5px;
+    font-size: 1em; }
+
+#main {
+  margin-top: 70px; }
+
+#wrapper {
+  min-height: 600px; }
+  #wrapper #main-container {
+    min-height: 600px; }
+
+#home-view #certification-wrapper #certification-list {
+  list-style: none;
+  padding-left: 0px; }
+  #home-view #certification-wrapper #certification-list .certification-item-panel .panel-goal {
+    background-color: lightgreen;
+    color: darkgreen; }
+  #home-view #certification-wrapper #certification-list .certification-item-panel .panel-start {
+    background-color: lightblue;
+    color: darkblue; }
+  #home-view #certification-wrapper #certification-list .certification-item-panel .panel-heading {
+    border-bottom: 1px dotted darkgray;
+    padding: 5px 10px; }
+  #home-view #certification-wrapper #certification-list .certification-item-panel h2, #home-view #certification-wrapper #certification-list .certification-item-panel h3, #home-view #certification-wrapper #certification-list .certification-item-panel h4 {
+    margin-top: 5px;
+    margin-bottom: 5px; }
+
+#certification-view td {
+  padding: 4px 6px; }
+#certification-view td input.hour-cell-input {
+  width: 50%;
+  height: 28px;
+  display: inline-block; }
+#certification-view td input.present {
+  background-color: lightgreen; }
+#certification-view td input.modified {
+  background-color: lightblue !important; }
+#certification-view tr.category-group {
+  background-color: lightgray; }

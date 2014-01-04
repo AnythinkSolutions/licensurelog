@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  user_id: 1
+  begin_date: 2013-11-30
+  goal_date: 2013-11-30
+  expire_date: 2013-11-30
+  notes: MyString
+
+two:
+  name: MyString
+  user_id: 1
+  begin_date: 2013-11-30
+  goal_date: 2013-11-30
+  expire_date: 2013-11-30
+  notes: MyString

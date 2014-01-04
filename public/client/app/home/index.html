@@ -1,0 +1,101 @@
+<div id="home-view">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="main-header clearfix">
+                <div class="page-title">
+                    <h3 class="no-margin">Dashboard</h3>
+                </div><!-- /page-title -->
+
+                <ul class="page-stats">
+                    <li>
+                        <div class="value">
+                            <span>In Progress</span>
+                            <h4>{{certificationCount}}</h4>
+                        </div>
+                        <!--<span id="visits" class="sparkline"></span>-->
+                    </li>
+                    <li>
+                        <div class="value">
+                            <span>Progress</span>
+                            <h4>{{progress}}%</h4>
+                        </div>
+                        <!--<span id="balances" class="sparkline"></span>-->
+                    </li>
+                </ul><!-- /page-stats -->
+            </div><!-- /main-header -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="headline m-top-md">
+                Your Licenses
+                <span class="line"></span>
+            </h4>
+        </div>
+    </div>
+
+    <div id="certification-wrapper" class="row">
+        <div class="col-md-11">
+            <ul id="certification-list">
+           <li class="certification-list-item" ng-repeat="cert in certifications">
+               <div class="panel certification-item-panel">
+                   <div class="panel-heading">
+                       <h3 class="heading-inline"><a href="#certifications/{{cert.id}}">{{cert.name}}</a></h3>
+                       <div class="panel-mini pull-right panel-goal">
+                           <div class="panel-mini-heading">
+                               Goal
+                           </div>
+                           <div class="panel-mini-body">
+                               {{cert.goal_date | date:"MMM d, yyyy"}}
+                           </div>
+                       </div>
+                       <div class="panel-mini pull-right panel-start">
+                           <div class="panel-mini-heading">
+                               Started
+                           </div>
+                           <div class="panel-mini-body">
+                               {{cert.begin_date | date:"MMM d, yyyy"}}
+                           </div>
+                       </div>
+                       <br/>
+                       <span>{{cert.description}}</span>
+                       <div class="clearfix"></div>
+                   </div>
+
+                   <div class="panel-body">
+
+                      <div class="panel certification-progress-panel pull-left" style="width: 50%;">
+                          <div class="panel-heading certification-progress-panel-heading">
+                              <h4 style="display:inline-block">Progress</h4>
+                              <span class="pull-right" style="margin-top:5px;">
+                                  40 of 100 hours
+                              </span>
+                          </div>
+                          <div class="panel-body">
+                              <div class="progress">
+                                  <div class="progress-bar progress-bar-success" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                       <div class="panel certification-hours-panel pull-right" style="width: 45%;">
+                           <div class="panel-heading certification-hours-panel-heading">
+                               <h4>Hours Summary</h4>
+                           </div>
+                           <div class="panel-body">
+
+                           </div>
+                       </div>
+
+                       <div class="clearfix"></div>
+
+                   </div>
+
+               </div>
+           </li>
+        </ul>
+        </div>
+    </div>
+</div>

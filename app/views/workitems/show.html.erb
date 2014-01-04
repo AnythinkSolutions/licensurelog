@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @workitem.date %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @workitem.user_id %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @workitem.category_id %>
+</p>
+
+<p>
+  <strong>Certification:</strong>
+  <%= @workitem.certification_id %>
+</p>
+
+<p>
+  <strong>Hours:</strong>
+  <%= @workitem.hours %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @workitem.notes %>
+</p>
+
+<p>
+  <strong>Signed off:</strong>
+  <%= @workitem.signed_off %>
+</p>
+
+<%= link_to 'Edit', edit_workitem_path(@workitem) %> |
+<%= link_to 'Back', workitems_path %>

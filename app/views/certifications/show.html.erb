@@ -1,0 +1,71 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @certification.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @certification.description %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @certification.user_id %>
+</p>
+
+<p>
+  <strong>Begin date:</strong>
+  <%= @certification.begin_date %>
+</p>
+
+<p>
+  <strong>Goal date:</strong>
+  <%= @certification.goal_date %>
+</p>
+
+<p>
+  <strong>Expire date:</strong>
+  <%= @certification.expire_date %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @certification.notes %>
+</p>
+
+<p>
+  <strong>Categories</strong>
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>User</th>
+    <th>Required hours</th>
+    <th>Parent category</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @certification.categories.each do |category| %>
+      <tr>
+        <td><%= link_to category.name, category %></td>
+        <td><%= category.description %></td>
+        <td><%= category.user_id %></td>
+        <td><%= category.required_hours %></td>
+        <td><%= category.supercategory.name if category.supercategory %></td>
+        <td></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+</p>
+
+<%= link_to 'Edit', edit_certification_path(@certification) %> |
+<%= link_to 'Back', certifications_path %>

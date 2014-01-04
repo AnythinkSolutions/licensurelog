@@ -1,0 +1,12 @@
+<div>
+    <div class="hour-input-wrapper" ng-show="{{!category.is_group}}">
+        <input type="text"
+               class="form-control hour-cell-input day-0 cat-{{category.id}}"
+               ng-class="{ present: category.days[day].original > 0, modified: category.days[day].hours != category.days[day].original }"
+               ng-model="category.days[day].hours"/>&nbsp;
+        <i class="fa fa-file-text"></i>
+    </div>
+    <div class="hour-total-wrapper" ng-show="{{category.is_group}}">
+        <!--<span>{{categoryTotal(category.id}}</span>-->
+    </div>
+</div>

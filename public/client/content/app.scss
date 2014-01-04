@@ -1,0 +1,89 @@
+.heading-inline{
+  display: inline-block;
+}
+
+.panel-mini{
+  margin: 5px 10px;
+  border: 1px solid darkgray;
+
+  .panel-mini-heading{
+    border-bottom: 1px solid darkgray;
+    padding: 2.5px 5px;
+    font-size: 0.65em;
+  }
+
+  .panel-mini-body{
+    padding: 5px;
+    font-size: 1em;
+  }
+}
+
+#main{
+  margin-top: 70px;
+}
+
+#wrapper{
+  min-height: 600px;
+
+  #main-container{
+    min-height: 600px;
+  }
+}
+
+#home-view{
+
+  #certification-wrapper{
+
+    #certification-list{
+      list-style: none;
+      padding-left: 0px;
+
+      .certification-item-panel{
+//        background-color: lightgray;
+
+        .panel-goal{
+          background-color: lightgreen;
+          color: darkgreen;
+        }
+
+        .panel-start{
+          background-color: lightblue;
+          color: darkblue;
+        }
+
+        .panel-heading{
+          border-bottom: 1px dotted darkgray;
+          padding: 5px 10px;
+        }
+
+        h2, h3, h4{
+          margin-top: 5px;
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+}
+
+#certification-view{
+  td{
+    padding: 4px 6px;
+  }
+  td input.hour-cell-input{
+    width:50%;
+    height: 28px;
+    display: inline-block;
+  }
+
+  td input.present{
+    background-color: lightgreen;
+  }
+
+  td input.modified{
+    background-color: lightblue !important;
+  }
+
+  tr.category-group{
+    background-color: lightgray;
+  }
+}

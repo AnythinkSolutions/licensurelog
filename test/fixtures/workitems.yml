@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  date: 2013-11-30
+  category_id: 1
+  certification_id: 1
+  hours: 1.5
+  notes: MyText
+  signed_off: false
+
+two:
+  date: 2013-11-30
+  category_id: 1
+  certification_id: 1
+  hours: 1.5
+  notes: MyText
+  signed_off: false

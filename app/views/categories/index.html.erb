@@ -1,0 +1,41 @@
+<h1>Listing categories</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Certification</th>
+      <th>User</th>
+      <th>Required Min</th>
+      <th>Maximum</th>
+      <th>Parent category</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= link_to category.name, category %></td>
+        <td><%= category.description %></td>
+        <td><%= link_to category.certification.name, category.certification if category.certification %></td>
+        <td><%= category.user_id %></td>
+        <td><%= category.required_hours %></td>
+        <td><%= category.cap %></td>
+        <td><%= category.supercategory.name if category.supercategory %></td>
+        <td></td>
+        <td><%= link_to 'Edit', edit_category_path(category) %></td>
+        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Category', new_category_path %>
+<%= link_to 'Certifications', certifications_path %>
+<%= link_to 'Work', workitems_path %>
