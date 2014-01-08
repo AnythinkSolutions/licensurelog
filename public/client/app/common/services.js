@@ -15,4 +15,3 @@ appServices.factory('datacontext', ['$resource',
 
         });
     }]);
-

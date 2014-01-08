@@ -18,7 +18,7 @@ $(function	()	{
 	  xkey: 'y',
 	  ykeys: ['Item1', 'Item2' , 'Item3'],
 	  labels: ['Item1', 'Item2', 'Item3'],
-	  lineColors: ['#A5C3F7','#999' ,'#9ad268']
+	  lineColors: ['#fe402b','#9ad268' ,'#ffc545']
 	});
 	
 	var donutChart = Morris.Donut({
@@ -28,7 +28,7 @@ $(function	()	{
 		{label: "In-Store Sales", value: 3091},
 		{label: "Mail-Order Sales", value: 2781}
 	  ],
-	  colors: ['#999','#9ad268' ,'#a5c3f7']
+	  colors: ['#ffc545','#9ad268' ,'#fe402b']
 	});
 	
 	var lineChart = Morris.Line({

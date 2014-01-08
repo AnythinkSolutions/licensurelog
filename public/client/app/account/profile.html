@@ -1,0 +1,297 @@
+<div id="profile-view">
+    <div class="row">
+
+    <!--<div class="tabbable tabs-below">-->
+    <!--<ul class="nav nav-pills">-->
+        <!--<li ng-class="{active: selectedTab == 1}">-->
+            <!--<a href="#" ng-click="selectedTab = 1;">Personal</a>-->
+        <!--</li>-->
+        <!--<li ng-class="{active: selectedTab == 2}">-->
+            <!--<a href="#" ng-click="selectedTab = 2;">Education</a>-->
+        <!--</li>-->
+        <!--<li ng-class="{active: selectedTab == 3}">-->
+            <!--<a href="#" ng-click="selectedTab = 3;">Contact</a>-->
+        <!--</li>-->
+    <!--</ul>-->
+
+    <!--<div class="tab-content" ng-show="selectedTab == 1">-->
+        <!--</div>-->
+        <!--</div>-->
+
+
+    <ul class="tab-bar grey-tab">
+        <li class="active">
+            <a data-target="#overview" data-toggle="tab">
+                    <span class="block text-center">
+                        <i class="fa fa-home fa-2x"></i>
+                    </span>
+                Overview
+            </a>
+        </li>
+        <li>
+            <a data-target="#edit" data-toggle="tab">
+                    <span class="block text-center">
+                        <i class="fa fa-edit fa-2x"></i>
+                    </span>
+                Edit Profile
+            </a>
+        </li>
+        <li>
+            <a data-target="#message" data-toggle="tab">
+                    <span class="block text-center">
+                        <i class="fa fa-envelope fa-2x"></i>
+                    </span>
+                Messages
+            </a>
+        </li>
+    </ul>
+    </div>
+    <div class="padding-md">
+    <div class="row">
+    <div class="col-md-3 col-sm-3">
+        <div class="row">
+            <div class="col-xs-6 col-sm-12 col-md-6 text-center">
+                <a href="#">
+                    <img src="../client/content/img/user.png" alt="User Avatar" class="img-thumbnail">
+                </a>
+
+                <div class="seperator"></div>
+                <div class="seperator"></div>
+            </div>
+            <!-- /.col -->
+            <div class="col-xs-6 col-sm-12 col-md-6">
+                <strong class="font-14">{{appsecurity.currentUser.name}}</strong>
+                <small class="block text-muted">
+                    {{appsecurity.currentUser.email}}
+                </small>
+                <div class="seperator"></div>
+                <a class="btn btn-success btn-xs m-bottom-sm">Follow</a>
+                <!--<div class="seperator"></div>-->
+                <!--<a href="#" class="social-connect tooltip-test facebook-hover" data-toggle="tooltip" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>-->
+                <!--<a href="#" class="social-connect tooltip-test twitter-hover" data-toggle="tooltip" data-original-title="Twitter"><i class="fa fa-twitter"></i></a>-->
+                <!--<a href="#" class="social-connect tooltip-test google-plus-hover" data-toggle="tooltip" data-original-title="Google Plus"><i class="fa fa-google-plus"></i></a>-->
+                <!--<div class="seperator"></div>-->
+                <div class="seperator"></div>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+        <div class="panel">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-4 text-center">
+                        <span class="block font-14">301</span>
+                        <small class="text-muted">Followers</small>
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div>
+        </div>
+        <!-- /panel -->
+
+        <!--<h5 class="headline">-->
+        <!--My Skill-->
+        <!--<span class="line"></span>-->
+        <!--</h5>-->
+        <!--<dl>-->
+        <!--<dt>HTML5 <span class="pull-right">90%</span></dt>-->
+        <!--<dd>-->
+        <!--<div class="progress progress-striped">-->
+        <!--<div class="progress-bar progress-bar-success animated-bar" style="width:90%"></div>-->
+        <!--</div>-->
+        <!--</dd>-->
+        <!--<dt>CSS <span class="pull-right">75%</span></dt>-->
+        <!--<dd>-->
+        <!--<div class="progress progress-striped">-->
+        <!--<div class="progress-bar progress-bar-info animated-bar" style="width:75%"></div>-->
+        <!--</div>-->
+        <!--</dd>-->
+        <!--<dt>jQuery <span class="pull-right">65%</span></dt>-->
+        <!--<dd>-->
+        <!--<div class="progress progress-striped">-->
+        <!--<div class="progress-bar progress-bar-warning animated-bar" style="width:65%"></div>-->
+        <!--</div>-->
+        <!--</dd>-->
+        <!--<dt>PHP <span class="pull-right">50%</span></dt>-->
+        <!--<dd>-->
+        <!--<div class="progress progress-striped">-->
+        <!--<div class="progress-bar progress-bar-danger animated-bar" style="width:50%"></div>-->
+        <!--</div>-->
+        <!--</dd>-->
+        <!--</dl>-->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-9 col-sm-9">
+    <div class="tab-content">
+
+    <!-- Tab 1 Begin -->
+    <div class="tab-pane fade in active" id="overview">
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="panel panel-default fadeInDown animation-delay1">
+                    <div class="panel-heading">
+                        About Me
+                    </div>
+                    <div class="panel-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eros nibh, viverra a dui a, gravida
+                            varius velit. Nunc vel tempor nisi. Aenean id pellentesque mi, non placerat mi. Integer luctus
+                            accumsan tellus. Vivamus quis elit sit amet nibh lacinia suscipit eu quis purus. Vivamus tristique
+                            est non ipsum dapibus lacinia sed nec metus.</p>
+                    </div>
+                </div>
+            <!-- /panel -->
+            </div>
+        </div>  <!-- /.row -->
+    </div>  <!-- /tab1 -->
+
+    <!-- Tab 2 Begin -->
+    <div class="tab-pane fade" id="edit">
+
+        <div class="row">
+            <div class="panel panel-info pull-right">
+                <div class="panel-body">
+                    Last Updated on {{appsecurity.currentUser.updatedAt.format('MMMM d, YYYY')}}
+                </div>
+            </div>            <!-- /panel -->
+        </div>        <!-- /.row -->
+
+        <div class="panel panel-default fadeInDown animation-delay1">
+            <form class="form-horizontal form-border">
+                <div class="panel-heading">
+                    <h4>Basic Information</h4>
+                </div>
+                <div class="panel-body">
+
+                    <div ng-show="infoError.message" class="error">
+                        <p>{{passwordError.message}}</p>
+                    </div>
+
+                    <div class="form-group" ng-class="{error: infoError.errors.name}">
+                        <label class="control-label col-md-2">Name</label>
+
+                        <div class="col-md-10">
+                            <input type="text" class="form-control input-sm" placeholder="Name" ng-model="userInfo.name"/>
+                            <div ng-show="infoError.errors.name">
+                                <div ng-repeat="field_error in infoError.errors.name">{{field_error}}</div>
+                            </div>
+                        </div>                        <!-- /.col -->
+                    </div>                    <!-- /form-group -->
+                    <div class="form-group" ng-class="{error: infoError.errors.email}">
+                        <label class="control-label col-md-2">Email</label>
+
+                        <div class="col-md-10">
+                            <input type="text" placeholder="Email" class="form-control input-sm" ng-model="userInfo.email"/>
+                            <div ng-show="infoError.errors.email">
+                                <div ng-repeat="field_error in infoError.errors.email">{{field_error}}</div>
+                            </div>
+                        </div>                        <!-- /.col -->
+                    </div>                    <!-- /form-group -->
+                </div>
+                <div class="panel-footer">
+                    <div class="text-right">
+                        <button class="btn btn-sm btn-success" ng-click="updateUser()">Update</button>
+                        <button class="btn btn-sm btn-success" type="reset" ng-click="resetUser()">Reset</button>
+                    </div>
+                </div>
+            </form>
+        </div>        <!-- /panel -->
+
+        <div class="panel panel-default fadeInDown animation-delay1">
+            <div class="panel-heading">
+                <h4>Change Password</h4>
+            </div>
+            <div class="panel-body">
+
+                <div ng-show="passwordError.message">
+                    <p>{{passwordError.message}}</p>
+                </div>
+
+                <form class="form-horizontal form-border">
+                    <div id="password-change-wrapper">
+                        <div class="form-group" ng-class="{error: passwordError.errors.current_password}">
+                            <label class="control-label col-md-2">Current</label>
+                            <div class="col-md-10">
+                                <input type="password" placeholder="Current Password" class="form-control input-sm" ng-model="userInfo.currentPassword">
+                                <div ng-show="passwordError.errors.current_password">
+                                    <div ng-repeat="field_error in passwordError.errors.current_password">{{field_error}}</div>
+                                </div>
+                            </div>                        <!-- /.col -->
+                        </div>                    <!-- /form-group -->
+                        <div class="form-group" ng-class="{error: passwordError.errors.password}">
+                            <label class="control-label col-md-2">New</label>
+
+                            <div class="col-md-10">
+                                <input type="password" placeholder="New Password" class="form-control input-sm" ng-model="userInfo.newPassword">
+                                <div ng-show="passwordError.errors.password">
+                                    <div ng-repeat="field_error in passwordError.errors.password">{{field_error}}</div>
+                                </div>
+                            </div>                        <!-- /.col -->
+                        </div>                    <!-- /form-group -->
+                        <div class="form-group" ng-class="{error: passwordError.errors.password_confirmation}">
+                            <label class="control-label col-md-2">Confirmation</label>
+
+                            <div class="col-md-10">
+                                <input type="password" placeholder="New Password Confirmation" class="form-control input-sm" ng-model="userInfo.newPasswordConfirmation">
+                                <div ng-show="passwordError.errors.password_confirmation">
+                                    <div ng-repeat="field_error in passwordError.errors.password_confirmation">{{field_error}}</div>
+                                </div>
+                            </div>                        <!-- /.col -->
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="panel-footer">
+                <div class="text-right">
+                    <button class="btn btn-sm btn-success" ng-click="changePassword()">Change Password</button>
+                    <button class="btn btn-sm btn-success" type="reset" ng-click="clearPassword()">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="panel panel-default">-->
+            <!--<div class="panel-body padding-xs">-->
+                <!--<textarea class="form-control no-border no-shadow" rows="2" placeholder="What's on your mind?"></textarea>-->
+            <!--</div>-->
+            <!--<div class="panel-footer clearfix">-->
+                <!--<a class="btn btn-xs btn-success pull-right">Post</a>-->
+            <!--</div>-->
+        <!--</div>        &lt;!&ndash; /panel &ndash;&gt;-->
+        <!--<div class="panel panel-default">-->
+            <!--<div class="panel-heading">-->
+                <!--About Me-->
+            <!--</div>-->
+            <!--<div class="panel-body padding-xs">-->
+                <!--<textarea class="form-control no-border no-shadow" rows="5" placeholder="Who are you?"></textarea>-->
+            <!--</div>-->
+            <!--<div class="panel-footer clearfix">-->
+                <!--<a class="btn btn-xs btn-success pull-right">Save</a>-->
+            <!--</div>-->
+        <!--</div>        &lt;!&ndash; /panel &ndash;&gt;-->
+
+    </div>    <!-- /tab2 -->
+
+    <div class="tab-pane fade" id="message">
+    <div class="panel panel-default inbox-panel">
+    <div class="panel-heading">
+        <div class="alert alert-info">Coming Soon</div>
+    </div>
+    <div class="panel-body">
+
+    </div>
+    </div>
+    <!-- /panel -->
+    </div>
+    <!-- /tab3 -->
+
+    </div>
+    <!-- /tab-content -->
+    </div>
+    <!-- /.col -->
+    </div>
+    <!-- /.row -->
+    </div>
+    <!-- /.padding-md -->
+    </div>
+</div>

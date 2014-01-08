@@ -1,7 +1,7 @@
 <!doctype html>
 <html ng-app="shell">
     <head>
-        <title>Anythink Certification Tracker</title>
+        <title>Licensure Log</title>
         <!--<meta charset="utf-8" />-->
         <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
         <!--<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />-->
@@ -27,6 +27,7 @@
         <!--<script src="client/lib/jquery/jquery-1.9.1.js"></script>-->
         <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="client/lib/endless/js/jquery.cookie.min.js"></script>
 
         <!-- Bootstrap -->
         <!--<script src="client/lib/bootstrap/js/bootstrap.js"></script>-->
@@ -50,13 +51,15 @@
         <!-- Angular Strap -->
         <script src="client/lib/angularstrap/angularstrap.js"></script>
         <!-- Endless -->
-        <!--<script src="client/lib/endless/js/endless/endless.js"></script>-->
+        <script src="client/lib/endless/js/endless/endless.js"></script>
 
         <!-- Alertify -->
         <script src="client/lib/alertify/alertify.js"></script>
 
         <script src="client/app/common/animations.js"></script>
         <script src="client/app/shell.js"></script>
+        <script src="client/app/common/appsecurity.js"></script>
+        <script src="client/app/account/account.js"></script>
         <script src="client/app/common/services.js"></script>
         <script src="client/app/common/directives.js"></script>
         <script src="client/app/common/filters.js"></script>
@@ -83,7 +86,7 @@
                 <div class="brand">
                     <span>
                         <a href="/">
-                            <!--<i class="glyphicon glyphicon-certificate"></i>--> License Logger
+                            <!--<i class="glyphicon glyphicon-certificate"></i>--> Licensure Log
                         </a>
                     </span>
                 </div>
@@ -94,16 +97,21 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </a>
-                        <a class="btn btn-sm pull-right" href="login.html">
+                        <a ng-show="appsecurity.currentUser.isAuthenticated" class="btn btn-sm pull-right" href="#" ng-click="logOut()">
                             <i class="fa fa-power-off"></i>
                         </a>
                     </div><!-- /size-toggle -->
                     <div class="user-block clearfix">
-                        <img src="client/content/img/user.jpg" alt="User Avatar">
+                        <img ng-show="appsecurity.currentUser.isAuthenticated" src="client/content/img/user.png" alt="User Avatar">
+                        <img ng-hide="appsecurity.currentUser.isAuthenticated" src="client/content/img/key.png" alt="sign in">
+
                         <div class="detail">
-                            <strong>John Doe</strong><!--<span class="badge badge-danger m-left-xs">4</span>-->
+
+                            <strong ng-show="appsecurity.currentUser.isAuthenticated">{{appsecurity.currentUser.name}}</strong><!--<span class="badge badge-danger m-left-xs">4</span>-->
+                            <strong ng-hide="appsecurity.currentUser.isAuthenticated"><a href="#/login">Log In</a></strong>
+
                             <ul class="list-inline">
-                                <li><a href="profile.html">Profile</a></li>
+                                <li ng-show="appsecurity.currentUser.isAuthenticated"><a href="#profile">Profile</a></li>
                                 <!--<li><a href="inbox.html" class="no-margin">Inbox</a></li>-->
                             </ul>
                         </div>

@@ -39,6 +39,15 @@ gem 'bcrypt-ruby'
 #used to make the console nicer
 gem 'hirb'
 
+#use Devise for authentication
+gem 'devise'
+
+#use letter-opener to view emails in browser
+gem 'letter_opener', :group => :development
+
+#used to support csrf authentication with Angular
+#gem 'angular_rails_csrf'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

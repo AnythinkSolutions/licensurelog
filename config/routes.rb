@@ -1,11 +1,16 @@
 CertTracker::Application.routes.draw do
 
+  devise_for :users
   post '/workitems/addorupdate' => 'workitems#add_or_update', :as => :add_or_update_hours
+
+  get '/users/remembered' => 'users#remembered_user', :as => :remembered_user
 
   resources :workitems
   resources :categories
   resources :certifications
   resources :users
+
+  root to: 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,0 +1,103 @@
+<div id="login-view">
+    <div class="row">
+
+        <div class="login-wrapper">
+            <div class="text-center">
+                <h2 class="fadeInUp animation-delay8" style="font-weight:bold">
+                    <span class="text-success">Licensure</span> <span style="color:#ccc; text-shadow:0 1px #fff">Log</span>
+                </h2>
+            </div>
+            <div class="login-widget animation-delay1">
+                <div class="panel panel-default">
+                    <div class="panel-heading clearfix">
+                        <div class="pull-left">
+                            <i class="fa fa-lock fa-lg"></i> Login
+                        </div>
+
+                        <div class="pull-right">
+                            <span style="font-size:11px;">Don't have any account?</span>
+                            <a class="btn btn-default btn-xs login-link" href="#register" style="margin-top:-2px;"><i class="fa fa-plus-circle"></i> Sign up</a>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+
+                        <div ng-show="appsecurity.error.message" class="error">
+                            <p>{{appsecurity.error.message}}</p>
+                        </div>
+
+                        <form class="form-login">
+
+                            <div class="form-group" ng-class="{error: appsecurity.error.errors.email}">
+                                <label>Email</label>
+                                <input type="text" placeholder="Email Address" class="form-control input-sm fadeInRight animation-delay2" ng-model="credentials.email" />
+                                <div ng-show="appsecurity.error.errors.email">
+                                    <div ng-repeat="field_error in appsecurity.error.errors.email">{{field_error}}</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group" ng-class="{error: appsecurity.error.errors.password}">
+                                <label>Password</label>
+                                <input type="password" placeholder="Password" class="form-control input-sm fadeInRight animation-delay2" ng-model="credentials.password" />
+                                <div ng-show="appsecurity.error.errors.password">
+                                    <div ng-repeat="field_error in appsecurity.error.errors.password">{{field_error}}</div>
+                                </div>
+                            </div>
+                            <div class="form-group fadeInRight animation-delay2">
+                                <label class="label-checkbox inline">
+                                    <input type="checkbox" class="regular-checkbox chk-delete" ng-model="credentials.rememberMe" />
+                                    <span class="custom-checkbox info fadeInRight animation-delay4"></span>
+                                </label>
+                                Remember me
+                            </div>
+
+                            <div class="seperator"></div>
+                            <div class="form-group">
+                                Forgot your password?<br/>
+                                Click <a href="#register">here</a> to reset your password
+                            </div>
+
+                            <hr/>
+
+                            <div class="controls text-right">
+                                <!--<a class="btn btn-success btn-sm bounceIn animation-delay7 login-link" href="login.html"><i class="fa fa-plus-circle"></i> Sign up</a>-->
+                                <button ng-click="login()" class="btn btn-success btn-sm fadeInRight animation-delay2 login-link"><i class="fa fa-sign-in"></i> Sign In</button>
+                                <button ng-click="logout()" class="btn btn-default btn-sm fadeInRight animation-delay2 logout-link"><i class="fa fa-sign-in"></i> Sign Out</button>
+                            </div>
+                            <!--<button ng-click="login()" class="btn btn-primary" >Sign In</button>-->
+                            <!--<button ng-click="logout()" class="btn btn-primary" >Logout</button>-->
+                        </form>
+                    </div>
+                </div><!-- /panel -->
+            </div><!-- /login-widget -->
+        </div><!-- /login-wrapper -->
+
+
+        <!--<div>-->
+            <!--<h1>Login</h1>-->
+        <!--</div>-->
+
+        <!--<div ng-show="loginError.message" class="error">-->
+            <!--<p>{{loginError.message}}</p>-->
+        <!--</div>-->
+
+        <!--<div class="body">-->
+            <!--<div ng-class="{error: loginError.errors.email}">-->
+                <!--Email: <input ng-model="loginUser.email" />-->
+                <!--<div ng-show="loginError.errors.email">-->
+                    <!--<div ng-repeat="field_error in loginError.errors.email">{{field_error}}</div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<div ng-class="{error: loginError.errors.password}">-->
+                <!--Password: <input type="password" ng-model="loginUser.password" />-->
+                <!--<div ng-show="loginError.errors.password">-->
+                    <!--<div ng-repeat="field_error in loginError.errors.password">{{field_error}}</div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<button ng-click="login()" class="btn btn-primary" >Login</button>-->
+            <!--<button ng-click="logout()" class="btn btn-primary" >Logout</button>-->
+        <!--</div>-->
+    </div>
+</div>

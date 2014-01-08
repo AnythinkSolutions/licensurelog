@@ -1,3 +1,6 @@
+.error {
+  color: red; }
+
 .heading-inline {
   display: inline-block; }
 
@@ -48,3 +51,6 @@
   background-color: lightblue !important; }
 #certification-view tr.category-group {
   background-color: lightgray; }
+
+#login-view .login-wrapper {
+  width: 80%; }

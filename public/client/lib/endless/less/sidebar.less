@@ -7,7 +7,7 @@ aside   {
     top: 0;
     bottom: 0;
     left: 0;  
-    background-color: @primary-color;
+    background-color: @sidebar-color;
     height: 100%;
     .transition(all 0.5s ease);
 
@@ -17,8 +17,8 @@ aside   {
     
     .size-toggle    {
         padding: 10px;   
-        border-bottom: 1px solid darken(@primary-color,3%);      
-        .box-shadow(0 1px 0 lighten(@primary-color,1%));
+        border-bottom: 1px solid darken(@sidebar-color,3%);      
+        .box-shadow(0 1px 0 lighten(@sidebar-color,1%));
         
         @media (max-width: 868px) {
             display: none;
@@ -57,22 +57,22 @@ aside   {
     
     .brand  {
         height: @topnav-height;
-        background: @primary-color;
+        background: @sidebar-color;
         color: @sidebar-font-color;
         text-align: center;
         font-size: 17px;
         line-height: @topnav-height;
-        border-bottom: 1px solid darken(@primary-color,3%);
+        border-bottom: 1px solid darken(@sidebar-color,3%);
     }
     
     .sidebar-inner  {
         height: 100%;
-        border-right: 1px solid darken(@primary-color,5%);
+        border-right: 1px solid darken(@sidebar-color,5%);
         
         .user-block   {
             padding: 10px;
-            border-bottom: 1px solid darken(@primary-color,3%);
-            .box-shadow(0 1px 0 lighten(@primary-color,1%));
+            border-bottom: 1px solid darken(@sidebar-color,3%);
+            .box-shadow(0 1px 0 lighten(@sidebar-color,1%));
             
             img {
                 float: left;
@@ -111,12 +111,12 @@ aside   {
         
         .search-block   {
             padding: 10px;
-            border-bottom: 1px solid darken(@primary-color,3%);
-            .box-shadow(0 1px 0 lighten(@primary-color,1%));
+            border-bottom: 1px solid darken(@sidebar-color,3%);
+            .box-shadow(0 1px 0 lighten(@sidebar-color,1%));
             
             input[type="text"]   {
-                background: darken(@primary-color,5%);    
-                border: 1px solid darken(@primary-color,5%);    
+                background: darken(@sidebar-color,5%);    
+                border: 1px solid darken(@sidebar-color,5%);    
                 .box-shadow(none);
                 
                 &:focus {
@@ -129,8 +129,8 @@ aside   {
             }
             .btn    {
                 color: #ccc;
-                background: darken(@primary-color,5%);    
-                border: 1px solid darken(@primary-color,5%);    
+                background: darken(@sidebar-color,5%);    
+                border: 1px solid darken(@sidebar-color,5%);    
             }
         }
     }
@@ -144,14 +144,16 @@ aside   {
             
            > li  {
                 position: relative;
-                border-top: 1px solid lighten(@primary-color,1%);
-                border-bottom: 1px solid darken(@primary-color,3%);
+                border-top: 1px solid lighten(@sidebar-color,1%);
+                border-bottom: 1px solid darken(@sidebar-color,3%);
+                .transition(all 0.5s ease);
                 
                 &.active    {
-                    border-top: 1px solid @primary-color;
+                    border-top: 1px solid @sidebar-color;
+                    .transition(all 0.5s ease);
                     > a   {
                         color:@sidebar-font-hover;
-                        background: darken(@primary-color,3%);
+                        background: darken(@sidebar-color,3%);
                         .box-shadow(0 0 3px rgba(0,0,0,0.15) inset);
                     }
                     
@@ -160,9 +162,15 @@ aside   {
                     }
                 }
                 
-                &:hover {
-                    .submenu {
-                        display: block;   
+                &.display    {
+                    .transition(all 0.5s ease);
+                    > a   {
+                        color:@sidebar-font-hover;
+                        background: darken(@sidebar-color,3%);
+                    }
+                    
+                    .menu-hover {
+                        opacity: 1;   
                     }
                 }
                 
@@ -179,19 +187,21 @@ aside   {
                         text-decoration: none;
                         color: @sidebar-font-hover;
                         .transition(all 0.5s ease);
-                        background: darken(@primary-color,5%);
+                        background: darken(@sidebar-color,5%);
                         .menu-hover {
                             opacity: 1;
                             .transition(all 0.5s ease);
-                        }
-                        
-                        .submenu {
-                            display: block;   
                         }
                     }
                     
                     .text   {
                         margin-left: 10px;
+                    }
+                    
+                    .badge  {
+                        position: absolute;
+                        top: 12px;
+                        right: 7px;
                     }
                     
                     .menu-hover {
@@ -208,6 +218,8 @@ aside   {
                 }
                 
                 .dropdown-menu  {
+                    
+                    .animation(fadeIn 0.8s ease);
                     
                     @media (min-width: 768px) {
                         right: -160px;
@@ -229,7 +241,7 @@ aside   {
                             
                             &:hover  {
                                 color: @sidebar-font-hover;
-                                background: darken(@primary-color,10%);
+                                background: darken(@sidebar-color,10%);
                             }
                         }
                     }
@@ -296,7 +308,7 @@ aside   {
                                 margin-left: 0;   
                             }
                                 
-                            .pull-right {
+                            .badge {
                                 display: none;
                             }
                         }

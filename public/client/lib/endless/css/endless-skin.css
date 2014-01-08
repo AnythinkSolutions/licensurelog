@@ -57,10 +57,12 @@ aside.skin-1 .main-menu > ul > li {
   border-top-color: #f4f4f4;
   border-bottom-color: #dfdfdf;
 }
-aside.skin-1 .main-menu > ul > li.active {
+aside.skin-1 .main-menu > ul > li.active,
+aside.skin-1 .main-menu > ul > li.display {
   border-top-color: #dfdfdf;
 }
-aside.skin-1 .main-menu > ul > li.active > a {
+aside.skin-1 .main-menu > ul > li.active > a,
+aside.skin-1 .main-menu > ul > li.display > a {
   background: #f9f9f9;
 }
 aside.skin-1 .main-menu > ul > li > a {
@@ -75,6 +77,17 @@ aside.skin-1 .main-menu > ul > li > a .menu-hover {
   box-shadow: 0 0 10px 0px #439bce;
   -moz-box-shadow: 0 0 10px 0px #439bce;
   -webkit-box-shadow: 0 0 10px 0px #439bce;
+}
+@media (max-width: 767px)   {
+    aside.skin-1 .main-menu > ul > li > .dropdown-menu li a {
+       color: #777;
+    }
+    
+    aside.skin-1 .main-menu > ul > li > .dropdown-menu li a:hover 
+    ,aside.skin-1 .main-menu > ul > li > .dropdown-menu li a:focus {
+       color: #777;
+       background: #f9f9f9;
+    } 
 }
 #top-nav.skin-1 {
   background: #3c8dbc;
@@ -158,10 +171,12 @@ aside.skin-2 .main-menu > ul > li {
   border-top-color: #444;
   border-bottom-color: #333;
 }
-aside.skin-2 .main-menu > ul > li.active {
+aside.skin-2 .main-menu > ul > li.active,
+aside.skin-2 .main-menu > ul > li.display {
   border-top-color: #A93922;
 }
-aside.skin-2 .main-menu > ul > li.active > a {
+aside.skin-2 .main-menu > ul > li.active > a,
+aside.skin-2 .main-menu > ul > li.display > a {
   background: #BD3F26;
   color: #fff;
 }
@@ -178,6 +193,17 @@ aside.skin-2 .main-menu > ul > li > a .menu-hover {
   box-shadow: 0 0 10px 0px #ffffff;
   -moz-box-shadow: 0 0 10px 0px #ffffff;
   -webkit-box-shadow: 0 0 10px 0px #ffffff;
+}
+@media (max-width: 767px)   {
+    aside.skin-2 .main-menu > ul > li > .dropdown-menu li a {
+       color: #777;
+    }
+    
+    aside.skin-2 .main-menu > ul > li > .dropdown-menu li a:hover 
+    ,aside.skin-2 .main-menu > ul > li > .dropdown-menu li a:focus {
+        color: #fff;
+        background: #bd3f26;
+    }
 }
 #top-nav.skin-2 {
   background: #BD3F26;
@@ -261,10 +287,12 @@ aside.skin-3 .main-menu > ul > li {
   border-top-color: #4577A5;
   border-bottom-color: #396389;
 }
-aside.skin-3 .main-menu > ul > li.active {
+aside.skin-3 .main-menu > ul > li.active,
+aside.skin-3 .main-menu > ul > li.display {
   border-top-color: #396389;
 }
-aside.skin-3 .main-menu > ul > li.active > a {
+aside.skin-3 .main-menu > ul > li.active > a,
+aside.skin-3 .main-menu > ul > li.display > a {
   background: #396389;
   color: #fff;
 }
@@ -281,6 +309,17 @@ aside.skin-3 .main-menu > ul > li > a .menu-hover {
   box-shadow: 0 0 10px 0px #ffffff;
   -moz-box-shadow: 0 0 10px 0px #ffffff;
   -webkit-box-shadow: 0 0 10px 0px #ffffff;
+}
+@media (max-width: 767px)   {
+    aside.skin-3 .main-menu > ul > li > .dropdown-menu li a {
+       color: #d6e8f7;
+    }
+    
+    aside.skin-3 .main-menu > ul > li > .dropdown-menu li a:hover 
+    ,aside.skin-3 .main-menu > ul > li > .dropdown-menu li a:focus {
+        color: #fff;
+        background: #396389;
+    }
 }
 #top-nav.skin-3 {
   background: rgba(255, 255, 255, 0.9);
@@ -364,10 +403,12 @@ aside.skin-4 .main-menu > ul > li {
   border-top-color: #756155;
   border-bottom-color: #55473E;
 }
-aside.skin-4 .main-menu > ul > li.active {
+aside.skin-4 .main-menu > ul > li.active,
+aside.skin-4 .main-menu > ul > li.display {
   border-top-color: #55473E;
 }
-aside.skin-4 .main-menu > ul > li.active > a {
+aside.skin-4 .main-menu > ul > li.active > a,
+aside.skin-4 .main-menu > ul > li.display > a {
   background: #55473E;
   color: #fff;
 }
@@ -385,12 +426,23 @@ aside.skin-4 .main-menu > ul > li > a .menu-hover {
   -moz-box-shadow: 0 0 10px 0px #ffffff;
   -webkit-box-shadow: 0 0 10px 0px #ffffff;
 }
+@media (max-width: 767px)   {
+    aside.skin-4 .main-menu > ul > li > .dropdown-menu li a {
+       color: #f7e4d7;
+    }
+    
+    aside.skin-4 .main-menu > ul > li > .dropdown-menu li a:hover 
+    ,aside.skin-4 .main-menu > ul > li > .dropdown-menu li a:focus {
+        color: #fff;
+        background: #55473e;
+    }
+}
 #top-nav.skin-4 {
   background: #635247;
   border-bottom-color: #55473E;
 }
 #top-nav.skin-4 .navbar-toggle .icon-bar {
-  background-color: #999;
+  background-color: #F7E4D7;
 }
 #top-nav.skin-4 .page-title {
   color: #F7E4D7;

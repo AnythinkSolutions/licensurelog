@@ -3,15 +3,15 @@
 }
 
 .block  {
-    display: block;   
+    display: block !important;   
 }
 
 .inline-block  {
-    display: inline-block;   
+    display: inline-block !important;   
 }
 
 .inline  {
-    display: inline-block;   
+    display: inline !important;   
 }
 
 .relative   {
@@ -48,6 +48,10 @@
     padding-top: 10px;   
 }
 
+.p-top-md   {
+    padding-top: 20px;   
+}
+
 .padding-xs {
     padding: 5px !important;   
 }
@@ -64,8 +68,36 @@
     padding: 40px !important;   
 }
 
+.paddingLR-xs {
+    padding: 0 5px;   
+}
+
+.paddingLR-sm {
+    padding: 0 10px;   
+}
+
 .paddingLR-md {
     padding: 0 20px;   
+}
+
+.paddingLR-lg {
+    padding: 0 40px;   
+}
+
+.paddingTB-xs {
+    padding: 5px 0;   
+}
+
+.paddingTB-md {
+    padding: 10px 0;   
+}
+
+.paddingTB-md {
+    padding: 20px 0;   
+}
+
+.paddingTB-lg {
+    padding: 40px 0;   
 }
 
 .no-margin {
@@ -263,7 +295,15 @@
 
 .bg-primary    {
     background-color: @bg-primary;
-    color: #fff;
+    color: #BECFDF;
+    
+    a   {
+         color: #BECFDF;
+         
+         &:hover ,&:focus   {
+            color: #fff;   
+         }
+    }
 }
 
 .bg-warning    {
@@ -321,6 +361,16 @@
     .animation-duration(1.0s);
 }
 
+.fadeInLeft    {
+    .animation-name(fadeInLeft);
+    .animation-duration(1.0s);
+}
+
+.fadeInRight    {
+    .animation-name(fadeInRight);
+    .animation-duration(1.0s);
+}
+
 .fadeInUpLarge    {
     .animation-name(fadeInUpLarge);
     .animation-duration(1.0s);
@@ -348,6 +398,16 @@
 
 .bounceIn    {
 	.animation-name(bounceIn);
+    .animation-duration(1.0s);
+}
+
+.flipInH    {
+    .animation-name(flipInH);
+    .animation-duration(1.0s);
+}
+
+.flipInV    {
+    .animation-name(flipInV);
     .animation-duration(1.0s);
 }
 

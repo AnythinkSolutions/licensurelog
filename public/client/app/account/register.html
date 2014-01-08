@@ -1,0 +1,105 @@
+<div id="register-view">
+    <div class="row">
+
+        <div class="login-wrapper">
+            <div class="text-center">
+                <h2 class="fadeInUp animation-delay4" style="font-weight:bold">
+                    <span class="text-success">Licensure</span> <span style="color:#ccc; text-shadow:0 1px #fff">Log</span>
+                </h2>
+            </div>
+            <div class="login-widget animation-delay1">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i class="fa fa-plus-circle fa-lg"></i> Sign up
+                    </div>
+                    <div class="panel-body">
+                        <form class="form-login">
+
+                            <div ng-show="registerError.message" class="error">
+                                <p>{{registerError.message}}</p>
+                            </div>
+
+                            <div class="form-group" ng-class="{error: registerError.errors.name}">
+                                <label>Email</label>
+                                <input type="text" placeholder="Name" class="form-control input-sm bounceIn animation-delay2" ng-model="registerUser.name" />
+                                <div ng-show="registerError.errors.name">
+                                    <div ng-repeat="field_error in registerError.errors.name">{{field_error}}</div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group" ng-class="{error: registerError.errors.email}">
+                                <label>Email</label>
+                                <input type="text" placeholder="Email Address" class="form-control input-sm bounceIn animation-delay2" ng-model="registerUser.email" />
+                                <div ng-show="registerError.errors.email">
+                                    <div ng-repeat="field_error in registerError.errors.email">{{field_error}}</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group" ng-class="{error: registerError.errors.password}">
+                                <label>Password</label>
+                                <input type="password" placeholder="Password" class="form-control input-sm bounceIn animation-delay2"  ng-model="registerUser.password" />
+                                <div ng-show="registerError.errors.password">
+                                    <div ng-repeat="field_error in registerError.errors.password">{{field_error}}</div>
+                                </div>
+                            </div>
+                            <div class="form-group" ng-class="{error: registerError.errors.password_confirmation}">
+                                <label>Password Confirmation</label>
+                                <input placeholder="Password Confirmation" class="form-control input-sm bounceIn animation-delay2"  type="password" ng-model="registerUser.password_confirmation" />
+                                <div ng-show="registerError.errors.password_confirmation">
+                                    <div ng-repeat="field_error in registerError.errors.password_confirmation">{{field_error}}</div>
+                                </div>
+                            </div>
+                            <div class="form-group bounceIn animation-delay2">
+                                <label class="label-checkbox inline">
+                                    <input type="checkbox" class="regular-checkbox chk-delete" ng-model="registerUser.rememberMe" />
+                                    <span class="custom-checkbox info bounceIn animation-delay4"></span>
+                                </label>
+                                Remember me
+                            </div>
+
+                            <div class="form-group">
+                                <label class="label-checkbox">
+                                    <input type="checkbox" ng-model="registerUser.rememberMe"/>
+                                    <span class="custom-checkbox info bounceIn animation-delay2"></span>
+                                    I accept the agreement.
+                                </label>
+                            </div><!-- /form-group -->
+
+                            <div class="seperator"></div>
+                            <div class="form-group">
+                                <div class="controls">
+                                    Already have an account? <a href="#login" class="primary-font login-link">Sign In</a>
+                                </div>
+                            </div><!-- /form-group -->
+
+                            <hr/>
+                            <div class="form-group">
+                                <div class="controls text-right">
+                                    <!--<a class="btn btn-success btn-sm bounceIn animation-delay7 login-link" href="login.html"><i class="fa fa-plus-circle"></i> Sign up</a>-->
+                                    <button ng-click="register()" class="btn btn-success btn-sm bounceIn animation-delay4 login-link"><i class="fa fa-plus-circle"></i> Sign Up</button>
+                                    <button ng-click="changePassword()" class="btn btn-default btn-sm bounceIn animation-delay4 login-link" >Change Password</button>
+                                </div>
+                            </div><!-- /form-group -->
+                        </form>
+                    </div>
+                </div><!-- /panel -->
+            </div><!-- /login-widget -->
+        </div><!-- /login-wrapper -->
+
+
+        <!--<div>-->
+            <!--<h1>Register</h1>-->
+        <!--</div>-->
+
+        <!--<div ng-show="loginError.message" class="error">-->
+            <!--<p>{{registerError.message}}</p>-->
+        <!--</div>-->
+
+        <!--<div class="body">-->
+
+
+
+        <!--</div>-->
+    </div>
+</div>

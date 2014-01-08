@@ -43,6 +43,13 @@
     a   {
         cursor: pointer;  
     }
+    
+    input   {
+        height: auto;
+        width: 180px;
+        background: #fff;
+        color: #626262;   
+    }
 }
 
 #theme-setting-icon	{
@@ -87,9 +94,8 @@
 .grey-container    {
     background: #eee;
     padding: 15px;
-    border: 1px solid rgba(0,0,0,0.2);
+    border: 1px solid #dfdfdf;
     border-width: 1px 0 1px 0;
-    .box-shadow(0 0 3px 0 rgba(0,0,0,0.25) inset);
 }
 
 .shortcut-wrapper   {
@@ -153,7 +159,7 @@
     .line   {
         display: block;
         height: 3px;
-        background: #3c8dbc;
+        background: @primary-color;
         margin-top: 7px;
         margin-bottom: -10px;
         width: 50px;
@@ -754,7 +760,6 @@ svg    {
         display: block;
         position: relative;
         padding: 5px 0;
-        background: #da4f49;
         color: #fff;
         font-size: 13px;
         line-height: 17px;
@@ -961,10 +966,80 @@ footer  {
     text-align: center;
     .transition(all 0.4s linear);
         
-    &:hover {
+    &:hover ,&:focus {
         text-decoration: none;   
         color: #fff;
-        .transition(all 0.4s linear);
+        border-color: transparent;
+        .transition(all 0.3s ease);
+    }
+}
+
+.search-options   {
+    max-width: 920px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: @panel-background;
+    border: 1px solid rgba(0,0,0,0.1);
+    .border-radius(6px);
+    
+    @media (max-width: 767px) {
+        text-align: center;
+    }
+    
+    .search-pager   {
+        float: right;   
+        
+         @media (max-width: 767px) {
+            float: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+    }
+}
+
+.search-filter  {
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+    .box-shadow(0 1px 0 0 #fff);
+    
+    ul  {
+        padding: 0;
+        margin: 0;
+        
+        li  {
+            display: inline-block;  
+            margin-right: 10px;
+        
+            &.active    {
+                a   {
+                    background: rgba(0,0,0,0.05);
+                    border: 1px solid rgba(0,0,0,0.2);
+                    .border-radius(4px);
+                    .box-shadow(0 0 3px rgba(0,0,0,0.25) inset);
+                }
+            }
+            
+            a   {
+                display: block;
+                padding: 10px 15px;
+                color: @default-font-color;
+                .transition(all 0.2s ease);
+                
+                &:hover ,&:focus    {
+                    color: @primary-color;
+                    text-decoration: none;
+                    .transition(all 0.2s ease);
+                }
+            }
+        }
+    }
+}
+
+.search-container {
+    .search-header  {
+        padding-bottom: 5px;
+        border-bottom: 1px solid @light-color;
     }
 }
 

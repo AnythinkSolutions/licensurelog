@@ -1,4 +1,12 @@
-var shell = angular.module('shell', ['ngRoute', 'appAnimations', 'appServices', 'certService', 'catService']);
+var shell = angular.module('shell',
+    [
+        'ngRoute',
+        'appAnimations',
+        'appServices',
+        'common.security',
+        'certService',
+        'catService'
+    ]);
 
 // configure our routes
 shell.config(['$routeProvider',
@@ -62,12 +70,27 @@ shell.config(['$routeProvider',
                 templateUrl : 'client/app/work/index.html',
                 controller  : 'workController'
             })
+
+            // route for login
+            .when('/login', {
+                templateUrl: 'client/app/account/login.html',
+                controller: 'loginController'
+            })
+            // route for login
+            .when('/register', {
+                templateUrl: 'client/app/account/register.html',
+                controller: 'registerController'
+            })
+            .when('/profile', {
+                templateUrl: 'client/app/account/profile.html',
+                controller: 'profileController'
+            })
         ;
     }]);
 
 
-shell.controller('shellController', ['$scope', '$location',
-    function($scope, $location){
+shell.controller('shellController', ['$scope', '$location', 'appsecurity',
+    function($scope, $location, appsecurity){
 
         $scope.getHashClass = function(path) {
 
@@ -83,5 +106,16 @@ shell.controller('shellController', ['$scope', '$location',
                 return ""
             }
         }
+
+        $scope.appsecurity = appsecurity;
+
+        $scope.logOut = function(){
+            appsecurity.signOut()
+                .then(function(){
+                    $location.path("login");
+                })
+        }
+
+        appsecurity.initialize();
 
 }]);
