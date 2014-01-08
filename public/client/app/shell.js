@@ -3,6 +3,7 @@ var shell = angular.module('shell',
         'ngRoute',
         'appAnimations',
         'appServices',
+        'common.authentication',
         'common.security',
         'certService',
         'catService'

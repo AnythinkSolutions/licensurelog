@@ -2,6 +2,8 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
   skip_before_filter :verify_authenticity_token
 
+  before_filter :authenticate_user!
+
   # GET /categories
   # GET /categories.json
   def index

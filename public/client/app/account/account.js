@@ -1,17 +1,21 @@
 
-shell.controller('loginController', ['$scope', '$http', '$location', 'appsecurity', function($scope, $http, $location, appsecurity){
-
-//    $scope.loginModel = {email: null, password: null, rememberMe: false };
-//    $scope.errorModel = {message: null, errors: {}};
+shell.controller('loginController', ['$scope', '$http', '$location', '$routeParams', 'appsecurity', function($scope, $http, $location, $routeParams, appsecurity){
 
     $scope.appsecurity = appsecurity;
     $scope.credentials = appsecurity.credentials;
+    var redirect = $routeParams["redirect"];
+
+    appsecurity.resetErrors();
+    appsecurity.resetModels();
 
     $scope.login = function(){
 
         appsecurity.signIn($scope.credentials)
             .then(function(){
-                $location.path('/');
+                if(redirect)
+                    $location.url(redirect);    //use url to clear out the query params
+                else
+                    $location.path('/');
             })
     }
 
@@ -69,7 +73,7 @@ shell.controller('loginController', ['$scope', '$http', '$location', 'appsecurit
                 }
 
                 if(parameters.successCallback) parameters.successCallback(data, status);
-                $scope.resetUsers();
+                //$scope.resetUsers();
             })
             .error(function(data, status){
                 if(status == 422){
@@ -86,16 +90,16 @@ shell.controller('loginController', ['$scope', '$http', '$location', 'appsecurit
             });
     }
 
-    $scope.resetMessages = function(){
-        $scope.loginError.message = null;
-        $scope.loginError.errors = {};
-    }
-
-    $scope.resetUsers = function(){
-        $scope.loginUser.email = null;
-        $scope.loginUser.password = null;
-        $scope.loginUser.rememberMe = false;
-    }
+//    $scope.resetMessages = function(){
+//        $scope.loginError.message = null;
+//        $scope.loginError.errors = {};
+//    }
+//
+//    $scope.resetUsers = function(){
+//        $scope.loginUser.email = null;
+//        $scope.loginUser.password = null;
+//        $scope.loginUser.rememberMe = false;
+//    }
 }]);
 
 shell.controller('registerController', ['$http', '$scope', '$location', 'appsecurity', function($http, $scope, $location, appsecurity){

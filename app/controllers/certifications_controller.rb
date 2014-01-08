@@ -3,6 +3,8 @@ class CertificationsController < ApplicationController
   before_action :set_certification, only: [:show, :edit, :update, :destroy]
   skip_before_filter :verify_authenticity_token
 
+  before_filter :authenticate_user!
+
   # GET /certifications
   # GET /certifications.json
   def index

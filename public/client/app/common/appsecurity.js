@@ -64,7 +64,7 @@ security.factory('appsecurity', ['$http',
             return submit(params)
                 .success(appsec.initializeUser)
                 .error(onError)
-                .finally(resetModels);
+                .finally(appsec.resetModels);
         }
 
         appsec.initialize = function(){
@@ -95,7 +95,7 @@ security.factory('appsecurity', ['$http',
         }
 
         var submit = function(parameters){
-            resetErrors();
+            appsec.resetErrors();
 
             return $http({
                 method: parameters.method,
@@ -117,12 +117,12 @@ security.factory('appsecurity', ['$http',
                 });
         }
 
-        var resetErrors = function(){
+        appsec.resetErrors = function(){
             appsec.error.message = null;
             appsec.error.errors = {};
         }
 
-        var resetModels = function(){
+        appsec.resetModels = function(){
             appsec.credentials.name = null;
             appsec.credentials.email = null;
             appsec.credentials.password = null;

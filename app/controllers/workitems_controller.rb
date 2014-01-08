@@ -2,6 +2,8 @@ class WorkitemsController < ApplicationController
   before_action :set_workitem, only: [:show, :edit, :update, :destroy]
   skip_before_filter :verify_authenticity_token
 
+  before_filter :authenticate_user!
+
   # GET /workitems
   # GET /workitems.json
   def index
