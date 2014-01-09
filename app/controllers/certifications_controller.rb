@@ -8,14 +8,18 @@ class CertificationsController < ApplicationController
   # GET /certifications
   # GET /certifications.json
   def index
-    @certifications = Certification.all
+    @certifications = Certification.where(:user_id => current_user.id)
   end
 
   # GET /certifications/1
   # GET /certifications/1.json
   def show
-    @certification = Certification.find params[:id]
-    @categories = Category.where(:parent_id => nil, :certification_id => params[:id]);
+    @certification = Certification.where(:id => params[:id], :user_id => current_user.id).first
+
+    unless @certification.nil?
+      @categories = Category.where(:parent_id => nil, :certification_id => params[:id]);
+    end
+
   end
 
   # GET /certifications/new
@@ -31,6 +35,7 @@ class CertificationsController < ApplicationController
   # POST /certifications.json
   def create
     @certification = Certification.new(certification_params)
+    @certification.user_id = current_user.id
 
     respond_to do |format|
       if @certification.save
@@ -49,6 +54,11 @@ class CertificationsController < ApplicationController
     respond_to do |format|
       #result = @certification.update(certification_params)
 
+      unless @certification.user_id == current_user.id
+        render json: "unauthorized", status: :unauthorized
+        return
+      end
+
       if @certification.update(certification_params)
         format.html { redirect_to @certification, notice: 'Certification was successfully updated.' }
         format.json { head :no_content }
@@ -62,6 +72,12 @@ class CertificationsController < ApplicationController
   # DELETE /certifications/1
   # DELETE /certifications/1.json
   def destroy
+
+    unless @certification.user_id == current_user.id
+      render json: "unauthorized", status: :unauthorized
+      return
+    end
+
     @certification.destroy
     respond_to do |format|
       format.html { redirect_to certifications_url }

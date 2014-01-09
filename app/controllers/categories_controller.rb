@@ -9,14 +9,14 @@ class CategoriesController < ApplicationController
   def index
 
     if(params[:flatten])
-      @categories = Category.all
+      @categories = Category.where(:user_id => current_user.id)
       render :index_flat
       return;
     else
       if params[:cert_id]
-        @categories = Category.where(:parent_id => nil).where(:certification_id => params[:cert_id]);
+        @categories = Category.where(:user_id => current_user.id, :parent_id => nil, :certification_id => params[:cert_id]);
       else
-        @categories = Category.where(:parent_id => nil)
+        @categories = Category.where(:user_id => current_user.id, :parent_id => nil)
       end
     end
   end
@@ -40,6 +40,7 @@ class CategoriesController < ApplicationController
   def create
 
     @category = Category.new(category_params)
+    @category.user_id = current_user.id
 
     respond_to do |format|
       if @category.save
@@ -56,10 +57,9 @@ class CategoriesController < ApplicationController
   # PATCH/PUT /categories/1.json
   def update
 
-    #TODO: Assign to the current user
-    #default to user 1 until we implement user stuff
-    unless @category.user_id
-      @category.user_id = 1
+    unless @category.user_id == current_user.id
+      render json: "unauthorized", status: :unauthorized
+      return
     end
 
     respond_to do |format|
@@ -76,6 +76,12 @@ class CategoriesController < ApplicationController
   # DELETE /categories/1
   # DELETE /categories/1.json
   def destroy
+
+    unless @category.user_id == current_user.id
+      render json: "unauthorized", status: :unauthorized
+      return
+    end
+
     @category.destroy
     respond_to do |format|
       format.html { redirect_to categories_url }

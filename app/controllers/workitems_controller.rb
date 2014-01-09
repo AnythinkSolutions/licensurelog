@@ -9,9 +9,9 @@ class WorkitemsController < ApplicationController
   def index
 
     if params[:certification_id]
-      @workitems = Workitem.where(:certification_id => params[:certification_id])
+      @workitems = Workitem.where(:certification_id => params[:certification_id], :user_id => current_user.id)
     else
-      @workitems = Workitem.all
+      @workitems = Workitem.where(:user_id => current_user.id)
     end
 
   end
@@ -42,7 +42,7 @@ class WorkitemsController < ApplicationController
     items.each do |i|
 
       wi = Workitem.new(i)
-      wi.user_id = 1   #TODO: Implement User Management
+      wi.user_id = current_user.id
 
       #check to make sure it's not put into a grouping item
       if wi.category.is_group
@@ -84,6 +84,7 @@ class WorkitemsController < ApplicationController
   def create
 
     #@workitem = Workitem.new(workitem_params)
+    @workitem.user_id = current_user.id
 
     respond_to do |format|
       if @workitem.save
@@ -99,6 +100,12 @@ class WorkitemsController < ApplicationController
   # PATCH/PUT /workitems/1
   # PATCH/PUT /workitems/1.json
   def update
+
+    unless @workitem.user_id == current_user.id
+      render json: "unauthorized", status: :unauthorized
+      return
+    end
+
     respond_to do |format|
       if @workitem.update(workitem_params)
         format.html { redirect_to @workitem, notice: 'Workitem was successfully updated.' }
@@ -113,6 +120,12 @@ class WorkitemsController < ApplicationController
   # DELETE /workitems/1
   # DELETE /workitems/1.json
   def destroy
+
+    unless @workitem.user_id == current_user.id
+      render json: "unauthorized", status: :unauthorized
+      return
+    end
+
     @workitem.destroy
     respond_to do |format|
       format.html { redirect_to workitems_url }
