@@ -68,6 +68,22 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div id="certification-chart-row" class="row">
+        <div class="col-md-9">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>Weekly Average</h4>
+                </div>
+                <div class="panel-body">
+                    <ct-area-chart ng-model="chartData">
+
+                    </ct-area-chart>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!--<a href="#/certifications/edit/{{certId}}" class="btn btn-default">Edit</a>-->
@@ -81,18 +97,28 @@
                 <thead>
                 <tr>
                     <td></td>
-                    <td><i class="fa fa-angle-double-left" ng-click="changeStartDate(-1, 'month')"></i></td>
+                    <td>
+                        <button class="btn btn-xs btn-info" ng-click="changeStartDate(-1, 'month')">
+                            <i class="fa fa-angle-double-left"></i>
+                        </button>
+                    </td>
                     <td colspan="7">
                         <div style="text-align:center">
                             <span>Week of {{getDate(0) | date: "M/d"}} to {{getDate(6) | date: "M/d"}}</span>
                         </div>
                     </td>
-                    <td><i class="fa fa-angle-double-right" ng-click="changeStartDate(1, 'months')"></i></td>
+                    <td>
+                        <button class="btn btn-xs btn-info" ng-click="changeStartDate(1, 'months')">
+                            <i class="fa fa-angle-double-right"></i>
+                        </button>
+                    </td>
                 </tr>
                 <tr>
                     <th style="min-width:200px;">Category Name</th>
                     <th>
-                        <i class="fa fa-angle-left" ng-click="changeStartDate(-7, 'days')"></i>
+                        <button class="btn btn-xs btn-info" ng-click="changeStartDate(-7, 'days')">
+                            <i class="fa fa-angle-left"></i>
+                        </button>
                     </th>
                     <th>Sun {{getDate(0) | date: "M/d"}}</th>
                     <th>Mon {{getDate(1) | date: "M/d"}}</th>
@@ -102,7 +128,9 @@
                     <th>Fri {{getDate(5) | date: "M/d"}}</th>
                     <th>Sat {{getDate(6) | date: "M/d"}}</th>
                     <th>
-                        <i class="fa fa-angle-right" ng-click="changeStartDate(7, 'days')"></i>
+                        <button class="btn btn-xs btn-info" ng-click="changeStartDate(7, 'days')">
+                            <i class="fa fa-angle-right"></i>
+                        </button>
                     </th>
                 </tr>
                 </thead>
@@ -145,7 +173,7 @@
                     <td><ct-hours-input-cell ct-category="sscat" ct-day="6"></ct-hours-input-cell></td>
                     <td></td>
                 </tr>
-                <tr ng-visible="sscat.subcategories.length > 0" ng-class="{'category-group': ssscat.is_group}" ng-repeat="ssscat in sscat.subcategories">
+                <tr ng-visible="sscat.subcategories.length > 0" ng-class="{'category-group': ssscat.is_group}" ng-repeat-start="ssscat in sscat.subcategories">
                     <td><a style="margin-left:45px;" href="#/categories/{{ssscat.id}}">{{ssscat.name}}</a></td>
                     <td></td>
                     <td><ct-hours-input-cell ct-category="ssscat" ct-day="0"></ct-hours-input-cell></td>
@@ -157,6 +185,19 @@
                     <td><ct-hours-input-cell ct-category="ssscat" ct-day="6"></ct-hours-input-cell></td>
                     <td></td>
                 </tr>
+                <tr ng-visible="ssscat.subcategories.length > 0" ng-class="{'category-group': sssscat.is_group}" ng-repeat="sssscat in ssscat.subcategories">
+                    <td><a style="margin-left:60px;" href="#/categories/{{sssscat.id}}">{{sssscat.name}}</a></td>
+                    <td></td>
+                    <td><ct-hours-input-cell ct-category="sssscat" ct-day="0"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="sssscat" ct-day="1"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="sssscat" ct-day="2"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="sssscat" ct-day="3"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="sssscat" ct-day="4"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="sssscat" ct-day="5"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="sssscat" ct-day="6"></ct-hours-input-cell></td>
+                    <td></td>
+                </tr>
+                <tr ng-repeat-end></tr>
                 <tr ng-repeat-end></tr>
                 <tr ng-repeat-end></tr>
                 <tr ng-repeat-end></tr>

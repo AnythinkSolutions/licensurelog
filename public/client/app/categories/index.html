@@ -53,7 +53,7 @@
                 <a class="btn btn-default" href="#/categories/add?parent_id={{sscat.id}}&cert_id={{sscat.certification.id}}">New Sub</a>
             </td>
         </tr>
-        <tr ng-visible="sscat.subcategories.length > 0" ng-repeat="ssscat in sscat.subcategories">
+        <tr ng-visible="sscat.subcategories.length > 0" ng-repeat-start="ssscat in sscat.subcategories">
             <td><a style="margin-left:45px;" href="#/categories/{{ssscat.id}}">{{ssscat.name}}</a></td>
             <td>{{ssscat.description}}</td>
             <td><a href="#/certifications/{{ssscat.certification.id}}">{{ssscat.certification.name}}</a></td>
@@ -64,6 +64,18 @@
                 <a class="btn btn-default" href="#/categories/add?parent_id={{ssscat.id}}&cert_id={{ssscat.certification.id}}">New Sub</a>
             </td>
         </tr>
+        <tr ng-visible="ssscat.subcategories.length > 0" ng-repeat="sssscat in ssscat.subcategories">
+            <td><a style="margin-left:60px;" href="#/categories/{{sssscat.id}}">{{sssscat.name}}</a></td>
+            <td>{{ssscat.description}}</td>
+            <td><a href="#/certifications/{{sssscat.certification.id}}">{{sssscat.certification.name}}</a></td>
+            <td>{{sssscat.required_hours}}</td>
+            <td>{{sssscat.cap}}</td>
+            <td>
+                <a class="btn btn-default" href="#/categories/edit/{{sssscat.id}}">Edit</a>
+                <a class="btn btn-default" href="#/categories/add?parent_id={{sssscat.id}}&cert_id={{sssscat.certification.id}}">New Sub</a>
+            </td>
+        </tr>
+        <tr ng-repeat-end></tr>
         <tr ng-repeat-end></tr>
         <tr ng-repeat-end></tr>
         <tr ng-repeat-end></tr>

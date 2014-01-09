@@ -86,6 +86,10 @@ shell.config(['$routeProvider',
                 templateUrl: 'client/app/account/profile.html',
                 controller: 'profileController'
             })
+            .when('/account/resetpassword', {
+                templateUrl: 'client/app/account/resetpassword.html',
+                controller: 'resetPasswordController'
+            })
         ;
     }]);
 

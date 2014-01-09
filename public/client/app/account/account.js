@@ -301,3 +301,68 @@ shell.controller('profileController', ['$http', '$scope', 'appsecurity', functio
 
 
 }]);
+
+shell.controller('resetPasswordController', ['$http', '$location', '$scope', 'appsecurity',
+    function($http, $location, $scope, appsecurity){
+
+    $scope.email = null;
+    $scope.error = {message: null, errors: {}};
+
+    $scope.resetPassword = function(){
+        var params =
+            {
+                method: 'POST',
+                url: '../users/password.json',
+                data: { user: {email : $scope.email}},
+                successMessage: "Reset instructions have been sent to your email address.",
+                errorEntity: $scope.error
+            };
+
+        $scope.submit(params);
+    }
+
+    var resetMessages = function(){
+        $scope.error.message = null;
+        $scope.error.errors = {};
+    }
+
+    $scope.submit = function(parameters){
+        resetMessages();
+
+        $http({
+            method: parameters.method,
+            url: parameters.url,
+            data: parameters.data})
+            .success(function(data, status){
+                if(status == 201 || status == 204){
+                    parameters.errorEntity.message = parameters.successMessage;
+//                    $scope.resetUsers();
+                }
+                else{
+                    if(data.error){
+                        parameters.errorEntity.message = data.error;
+                    }
+                    else{
+                        parameters.errorEntity.message = "Success, but with an unexpected success code, potentially a server error.  Server response was: " + JSON.stringify(data);
+                    }
+                }
+
+                if(parameters.successCallback) parameters.successCallback(data, status);
+            })
+            .error(function(data, status){
+                if(status == 422){
+                    parameters.errorEntity.errors = data.errors;
+                }
+                else{
+                    if(data.error){
+                        parameters.errorEntity.message = data.error;
+                    }
+                    else{
+                        parameters.errorEntity.message = "Unexplained error, potentially a server error.  Server response was: " + JSON.stringify(data);
+                    }
+                }
+            });
+    }
+
+
+}]);
