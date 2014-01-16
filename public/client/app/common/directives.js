@@ -29,21 +29,39 @@ shell.directive('ctAreaChart', function(){
 
     return{
         restrict: 'A',
-//        scope: {
-//          data: "=ctData"
-//        },
+        scope: {
+          data: "&ctChartData",
+          xkey: "&ctChartXkey",
+          ykey: "&ctChartYkey",
+          xformat: "&ctChartXlabelFormat"
+        },
         link: function(scope, element, attributes){
 
-            var data = scope.chartData;
+            //var data = scope.chartData;
 
             //Morris Chart
+//            var overviewChart = Morris.Area({
+//                element: element[0].id,
+//                data: data,
+//                xkey: 'y',
+//                ykeys: ['Item1', 'Item2' , 'Item3'],
+//                labels: ['Item1', 'Item2', 'Item3'],
+//                lineColors: ['#fe402b','#9ad268' ,'#ffc545']
+//            });
+
+            var data = scope.data();
+            var xkey = scope.xkey();
+            var ykey = scope.ykey();
+            var xformatter = scope.xformat();
+
             var overviewChart = Morris.Area({
                 element: element[0].id,
                 data: data,
-                xkey: 'y',
-                ykeys: ['Item1', 'Item2' , 'Item3'],
-                labels: ['Item1', 'Item2', 'Item3'],
-                lineColors: ['#fe402b','#9ad268' ,'#ffc545']
+                xkey: xkey,
+                ykeys: ykey,
+                labels: ykey,
+                lineColors: ['#fe402b','#9ad268' ,'#ffc545'],
+                xLabelFormat: xformatter
             });
         }
     };

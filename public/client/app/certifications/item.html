@@ -78,7 +78,12 @@
                     <h4>Weekly Average</h4>
                 </div>
                 <div class="panel-body">
-                    <div id="certification-chart" ct-area-chart="chartData">
+                    <div id="certification-chart"
+                         ct-area-chart="chartData"
+                         ct-chart-data="chartData"
+                         ct-chart-xkey="xkey"
+                         ct-chart-ykey="ykey"
+                         ct-chart-xlabel-format="xlabelformatter">
 
                     </ct-area-chart>
                 </div>

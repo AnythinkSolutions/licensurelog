@@ -17,22 +17,52 @@ shell.controller('certificationController', ['$scope', '$http', '$routeParams', 
         var hours = [];
         $scope.certId = id;
 
+//        $scope.chartData = [
+//            { y: '2004', Item1: 2647, Item2: 0 ,Item3:2666 },
+//            { y: '2005', Item1: 2778, Item2: 2294 ,Item3:2441 },
+//            { y: '2006', Item1: 4912, Item2: 1969 ,Item3:2501 },
+//            { y: '2007', Item1: 5689, Item2: 3597 ,Item3:3767 },
+//            { y: '2008', Item1: 2293, Item2: 1914 ,Item3:6810 },
+//            { y: '2009', Item1: 1881, Item2: 4293 ,Item3:5670 },
+//            { y: '2010', Item1: 1588, Item2: 3795 ,Item3:4820 },
+//            { y: '2011', Item1: 5174, Item2: 5967 ,Item3:15073 },
+//            { y: '2012', Item1: 2028, Item2: 4460 ,Item3:10687 },
+//            { y: '2013', Item1: 1791, Item2: 5713 ,Item3:8432 },
+//        ];
+
+//        $scope.chartData = [
+//            { y: '1', Hours: 28, Supervision: 0 , Other:24 },
+//            { y: '2', Hours: 30, Supervision: 2 , Other:28 },
+//            { y: '3', Hours: 28, Supervision: 3 , Other:25 }//,
+////            { y: '2007', Item1: 5689, Item2: 3597 ,Item3:3767 },
+////            { y: '2008', Item1: 2293, Item2: 1914 ,Item3:6810 },
+////            { y: '2009', Item1: 1881, Item2: 4293 ,Item3:5670 },
+////            { y: '2010', Item1: 1588, Item2: 3795 ,Item3:4820 },
+////            { y: '2011', Item1: 5174, Item2: 5967 ,Item3:15073 },
+////            { y: '2012', Item1: 2028, Item2: 4460 ,Item3:10687 },
+////            { y: '2013', Item1: 1791, Item2: 5713 ,Item3:8432 },
+//        ];
+//        $scope.xkey = 'y';
+//        $scope.ykey = ['Hours', 'Supervision', 'Other'];
+
+
+
         $scope.chartData = [
-            { y: '2004', Item1: 2647, Item2: 0 ,Item3:2666 },
-            { y: '2005', Item1: 2778, Item2: 2294 ,Item3:2441 },
-            { y: '2006', Item1: 4912, Item2: 1969 ,Item3:2501 },
-            { y: '2007', Item1: 5689, Item2: 3597 ,Item3:3767 },
-            { y: '2008', Item1: 2293, Item2: 1914 ,Item3:6810 },
-            { y: '2009', Item1: 1881, Item2: 4293 ,Item3:5670 },
-            { y: '2010', Item1: 1588, Item2: 3795 ,Item3:4820 },
-            { y: '2011', Item1: 5174, Item2: 5967 ,Item3:15073 },
-            { y: '2012', Item1: 2028, Item2: 4460 ,Item3:10687 },
-            { y: '2013', Item1: 1791, Item2: 5713 ,Item3:8432 },
+            { week: '2013-12-07', Hours: 28, Supervision: 4, Other: 24 },
+            { week: '2013-12-14', Hours: 24, Supervision: 0, Other: 24 },
+            { week: '2013-12-21', Hours: 33, Supervision: 3, Other: 30 },
+            { week: '2013-12-28', Hours: 21, Supervision: 0, Other: 21 },
+            { week: '2014-01-04', Hours: 24, Supervision: 3, Other: 21 },
+            { week: '2014-01-11', Hours: 30, Supervision: 2, Other: 28 }
         ];
+        $scope.xkey = 'week';
+        $scope.ykey = ['Hours', 'Supervision', 'Other'];
+        $scope.xlabelformatter = function(date){ return moment(date).format('MMM D, YYYY'); };
+
 
         var prepareCategory = function(cat){
 
-            //Checks to see if a
+            //Checks to see if a moment falls within the currently displayed week
             var isInRange = function(mt){
                 var yes = startOfWeek.isBefore(mt, "day") || startOfWeek.isSame(mt, "day");
                 yes = yes && (endOfWeek.isAfter(mt, "day") || endOfWeek.isSame(mt, "day"));
@@ -157,6 +187,8 @@ shell.controller('certificationController', ['$scope', '$http', '$routeParams', 
             };
 
             $scope.categories = prepareCategories(cert.categories);
+
+            $scope.getWeeklyTotals();
         }
 
         var getFormattedDate = function(dayOfWeek){
@@ -178,6 +210,26 @@ shell.controller('certificationController', ['$scope', '$http', '$routeParams', 
             });
 
             return total;
+        }
+
+        $scope.getWeeklyTotals = function(){
+            var curWeek = today.week();
+            var data = [];
+
+            _.each(hours, function(h) {
+                var w = h.moment.week();
+                var y = h.moment.year();
+                var key = y.toString() + ' - ' + w.toString();
+
+                var existing = _.find(data, function(d) { return d.week == key; });
+                if(existing){
+                    existing.hours += h.hours;
+                }
+                else{
+                    var start = h.moment.clone().day(0).toDate();
+                    data.push({week: key, startDate: start, hours: h.hours});
+                }
+            });
         }
 
         $scope.changeStartDate = function(num, type){
