@@ -33,7 +33,9 @@ shell.directive('ctAreaChart', function(){
           data: "&ctChartData",
           xkey: "&ctChartXkey",
           ykey: "&ctChartYkey",
-          xformat: "&ctChartXlabelFormat"
+          xformat: "&ctChartXlabelFormat"//,
+//          hoverCallback: "&ctChartHoverCallback"//,
+//          ready: "&ctChartReady"
         },
         link: function(scope, element, attributes){
 
@@ -48,21 +50,38 @@ shell.directive('ctAreaChart', function(){
 //                labels: ['Item1', 'Item2', 'Item3'],
 //                lineColors: ['#fe402b','#9ad268' ,'#ffc545']
 //            });
-
-            var data = scope.data();
+//            var ready = scope.ready;
+            var data = scope.data;
             var xkey = scope.xkey();
             var ykey = scope.ykey();
             var xformatter = scope.xformat();
+//            var hoverCallback = scope.hoverCallback();
 
-            var overviewChart = Morris.Area({
-                element: element[0].id,
-                data: data,
-                xkey: xkey,
-                ykeys: ykey,
-                labels: ykey,
-                lineColors: ['#fe402b','#9ad268' ,'#ffc545'],
-                xLabelFormat: xformatter
-            });
+            var chart = null;
+
+            scope.$watch(data, function(newVal, oldVal){
+                if(newVal){
+
+                    if(chart != null){
+                        chart.setData(data());
+                    }
+                    else{
+                        chart = Morris.Area({
+                            element: element[0].id,
+                            data: data(),
+                            xkey: xkey,
+                            ykeys: ykey,
+                            labels: ykey,
+                            xLabels: 'month',
+                            lineColors: ['#fe402b','#9ad268' ,'#ffc545'],
+                            xLabelFormat: xformatter//,
+//                            hoverCallback: hoverCallback
+                        });
+                    }
+                }
+            }, true);
+
+
         }
     };
 });

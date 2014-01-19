@@ -56,26 +56,55 @@
             </div>
         </div>
     </div>
+
+    <!--<div class="row">-->
+        <!--<div class="col-md-12">-->
+            <!--<h4 class="headline m-top-sm">-->
+                <!--<span>Progress</span>-->
+                <!--<span class="line"></span>-->
+            <!--</h4>-->
+        <!--</div>-->
+    <!--</div>-->
+
     <div id="certification-progress-row" class="row">
-        <div class="col-md-9">
+        <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4>Progress</h4>
                 </div>
                 <div class="panel-body">
-                    <div class="progress" style="height:50px;">
-                        <div class="progress-bar" style="height: 50px;" ng-style="getStyle(progress)"></div>
-                    </div>
+                    <table class="table">
+                        <!--<th>-->
+                            <!--<tr>-->
+                                <!--<td>Category</td>-->
+                                <!--<td>Progress</td>-->
+                                <!--<td>Percent Complete</td>-->
+                                <!--<td>Hours</td>-->
+                            <!--</tr>-->
+                        <!--</th>-->
+                        <tbody ng-repeat="total in totals">
+                            <tr>
+                                <td class="col-md-2"><h5>{{total.name}}</h5></td>
+                                <td class="col-md-7">
+                                    <div class="progress progress-striped active" style="height:20px;">
+                                        <div class="progress-bar" style="height: 20px;" ng-style="getProgressStyle($index)"></div>
+                                    </div>
+                                </td>
+                                <td class="col-md-1">{{total.percentComplete | percentage}}</td>
+                                <td class="col-md-2">{{total.complete}} of {{total.required}} hours</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
 
     <div id="certification-chart-row" class="row">
-        <div class="col-md-9">
+        <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4>Weekly Average</h4>
+                    <h4>Weekly Hours</h4>
                 </div>
                 <div class="panel-body">
                     <div id="certification-chart"
@@ -83,9 +112,11 @@
                          ct-chart-data="chartData"
                          ct-chart-xkey="xkey"
                          ct-chart-ykey="ykey"
-                         ct-chart-xlabel-format="xlabelformatter">
+                         ct-chart-xlabel-format="xlabelformatter"
+                         > <!-- ch-chart-hover-callback="chartHoverCallback" -->
 
-                    </ct-area-chart>
+                        <!--</ct-area-chart>-->
+                    </div>
                 </div>
             </div>
         </div>
@@ -152,7 +183,7 @@
                     <td><ct-hours-input-cell ct-category="cat" ct-day="4"></ct-hours-input-cell></td>
                     <td><ct-hours-input-cell ct-category="cat" ct-day="5"></ct-hours-input-cell></td>
                     <td><ct-hours-input-cell ct-category="cat" ct-day="6"></ct-hours-input-cell></td>
-                    <td></td>
+                    <td><span ng-hide="{{cat.is_group}}">{{getCategoryTotal(cat.id)}}</span></td>
                 </tr>
                 <tr ng-repeat-start="subcat in cat.subcategories" ng-class="{'category-group': subcat.is_group}">
                     <td><a style="margin-left:15px;" href="#/categories/{{subcat.id}}">{{subcat.name}}</a></td>
@@ -164,7 +195,7 @@
                     <td><ct-hours-input-cell ct-category="subcat" ct-day="4"></ct-hours-input-cell></td>
                     <td><ct-hours-input-cell ct-category="subcat" ct-day="5"></ct-hours-input-cell></td>
                     <td><ct-hours-input-cell ct-category="subcat" ct-day="6"></ct-hours-input-cell></td>
-                    <td></td>
+                    <td><span ng-hide="{{subcat.is_group}}">{{getCategoryTotal(subcat.id)}}</span></td>
                 </tr>
                 <tr ng-repeat-start="sscat in subcat.subcategories" ng-class="{'category-group': sscat.is_group}">
                     <td><a style="margin-left:30px;" href="#/categories/{{sscat.id}}">{{sscat.name}}</a></td>
@@ -176,7 +207,7 @@
                     <td><ct-hours-input-cell ct-category="sscat" ct-day="4"></ct-hours-input-cell></td>
                     <td><ct-hours-input-cell ct-category="sscat" ct-day="5"></ct-hours-input-cell></td>
                     <td><ct-hours-input-cell ct-category="sscat" ct-day="6"></ct-hours-input-cell></td>
-                    <td></td>
+                    <td><span ng-hide="{{sscat.is_group}}">{{getCategoryTotal(sscat.id)}}</span></td>
                 </tr>
                 <tr ng-visible="sscat.subcategories.length > 0" ng-class="{'category-group': ssscat.is_group}" ng-repeat-start="ssscat in sscat.subcategories">
                     <td><a style="margin-left:45px;" href="#/categories/{{ssscat.id}}">{{ssscat.name}}</a></td>
@@ -188,7 +219,7 @@
                     <td><ct-hours-input-cell ct-category="ssscat" ct-day="4"></ct-hours-input-cell></td>
                     <td><ct-hours-input-cell ct-category="ssscat" ct-day="5"></ct-hours-input-cell></td>
                     <td><ct-hours-input-cell ct-category="ssscat" ct-day="6"></ct-hours-input-cell></td>
-                    <td></td>
+                    <td><span ng-hide="{{ssscat.is_group}}">{{getCategoryTotal(ssscat.id)}}</span></td>
                 </tr>
                 <tr ng-visible="ssscat.subcategories.length > 0" ng-class="{'category-group': sssscat.is_group}" ng-repeat="sssscat in ssscat.subcategories">
                     <td><a style="margin-left:60px;" href="#/categories/{{sssscat.id}}">{{sssscat.name}}</a></td>
@@ -200,7 +231,7 @@
                     <td><ct-hours-input-cell ct-category="sssscat" ct-day="4"></ct-hours-input-cell></td>
                     <td><ct-hours-input-cell ct-category="sssscat" ct-day="5"></ct-hours-input-cell></td>
                     <td><ct-hours-input-cell ct-category="sssscat" ct-day="6"></ct-hours-input-cell></td>
-                    <td></td>
+                    <td><span ng-hide="{{sssscat.is_group}}">{{getCategoryTotal(sssscat.id)}}</span></td>
                 </tr>
                 <tr ng-repeat-end></tr>
                 <tr ng-repeat-end></tr>
