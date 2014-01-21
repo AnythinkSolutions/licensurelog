@@ -33,7 +33,8 @@ shell.directive('ctAreaChart', function(){
           data: "&ctChartData",
           xkey: "&ctChartXkey",
           ykey: "&ctChartYkey",
-          xformat: "&ctChartXlabelFormat"//,
+          xformat: "&ctChartXlabelFormat",
+          lineColors: "&ctChartLineColors"//,
 //          hoverCallback: "&ctChartHoverCallback"//,
 //          ready: "&ctChartReady"
         },
@@ -55,6 +56,7 @@ shell.directive('ctAreaChart', function(){
             var xkey = scope.xkey();
             var ykey = scope.ykey();
             var xformatter = scope.xformat();
+            var lineColors = scope.lineColors();
 //            var hoverCallback = scope.hoverCallback();
 
             var chart = null;
@@ -73,7 +75,7 @@ shell.directive('ctAreaChart', function(){
                             ykeys: ykey,
                             labels: ykey,
                             xLabels: 'month',
-                            lineColors: ['#fe402b','#9ad268' ,'#ffc545'],
+                            lineColors: lineColors ? lineColors : ['#fe402b','#9ad268' ,'#ffc545'],
                             xLabelFormat: xformatter//,
 //                            hoverCallback: hoverCallback
                         });

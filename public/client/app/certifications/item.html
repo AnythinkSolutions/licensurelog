@@ -2,27 +2,41 @@
 
     <div class="row">
         <div class="col-md-12">
-            <h4 class="headline m-top-md">
-                <span>{{certification.name}}</span>
+            <!--<div>-->
+                <!--<span>-->
+                    <!--<h3 style="display:inline;">{{certification.name}}</h3>-->
+                    <!--<span>{{certification.description}}</span>-->
+                <!--</span>-->
+                <!--<div class="pull-right">-->
+                    <!--<a href="#certifications/edit/{{certId}}" class="btn btn-sm btn-primary">-->
+                        <!--<i class="fa fa-edit"></i> Edit-->
+                    <!--</a>-->
+                <!--</div>-->
+                <!--<span class="line"></span>-->
+            <!--</div>-->
+
+            <h3 class="headline m-top-md">
+                <span title="{{certification.description}}">{{certification.name}}</span>
+                <!--<span style="font-style:normal;font-size:11px;font-weight:normal;">{{certification.description}}</span>-->
                 <div class="pull-right">
                     <a href="#certifications/edit/{{certId}}" class="btn btn-sm btn-primary">
                         <i class="fa fa-edit"></i> Edit
                     </a>
                 </div>
                 <span class="line"></span>
-            </h4>
-            <span>{{certification.description}}</span>
+            </h3>
+            <!--<span>{{certification.description}}</span>-->
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <h4 class="headline m-top-sm">
-                <span>Status</span>
-                <span class="line"></span>
-            </h4>
-        </div>
-    </div>
+    <!--<div class="row">-->
+        <!--<div class="col-md-12">-->
+            <!--<h4 class="headline m-top-sm">-->
+                <!--<span>Status</span>-->
+                <!--<span class="line"></span>-->
+            <!--</h4>-->
+        <!--</div>-->
+    <!--</div>-->
 
     <div id="certification-statistics-row" class="row">
         <div class="col-md-4">
@@ -30,7 +44,7 @@
                 <div class="panel-body">
                     <span class="stat-icon"><i class="fa fa-clock-o"></i></span>
                     <div class="pull-right text-right">
-                        <div class="value">{{hoursComplete | number}}</div>
+                        <div class="value">{{totals[0].complete | number}}</div>
                         <div class="title">Hours Complete</div>
                     </div>
                 </div>
@@ -41,7 +55,7 @@
                 <div class="panel-body">
                     <span class="stat-icon"><i class="fa fa-calendar-o"></i></span>
                     <div class="pull-right text-right">
-                        <div class="value">11-15-14</div>
+                        <div class="value">{{projectedCompletionDate.format('M-D-YYYY')}}</div>
                         <div class="title">Projected Completion</div>
                     </div>
                 </div>
@@ -50,21 +64,12 @@
         <div class="col-md-3">
             <div class="panel panel-default panel-stat2 bg-info">
                 <div class="panel-body">
-                    <div class="value">{{ getPercentComplete() | percentage }}</div>
+                    <div class="value">{{ totals[0].percentComplete | percentage }}</div>
                     <div class="title">Complete</div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!--<div class="row">-->
-        <!--<div class="col-md-12">-->
-            <!--<h4 class="headline m-top-sm">-->
-                <!--<span>Progress</span>-->
-                <!--<span class="line"></span>-->
-            <!--</h4>-->
-        <!--</div>-->
-    <!--</div>-->
 
     <div id="certification-progress-row" class="row">
         <div class="col-md-12">
@@ -101,7 +106,7 @@
     </div>
 
     <div id="certification-chart-row" class="row">
-        <div class="col-md-12">
+        <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4>Weekly Hours</h4>
@@ -113,7 +118,30 @@
                          ct-chart-xkey="xkey"
                          ct-chart-ykey="ykey"
                          ct-chart-xlabel-format="xlabelformatter"
+                         ct-chart-line-colors="weeklyLineColors"
+                         style="height: 200px;"
                          > <!-- ch-chart-hover-callback="chartHoverCallback" -->
+
+                        <!--</ct-area-chart>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>Accumulated Hours</h4>
+                </div>
+                <div class="panel-body">
+                    <div id="certification-acc-chart"
+                         ct-area-chart="chartData"
+                         ct-chart-data="chartData"
+                         ct-chart-xkey="xkey"
+                         ct-chart-ykey="ykeyacc"
+                         ct-chart-xlabel-format="xlabelformatter"
+                         ct-chart-line-colors="accumLineColors"
+                         style="height: 200px;"
+                            > <!-- ch-chart-hover-callback="chartHoverCallback" -->
 
                         <!--</ct-area-chart>-->
                     </div>

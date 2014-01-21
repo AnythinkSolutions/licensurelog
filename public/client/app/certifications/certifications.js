@@ -16,13 +16,17 @@ shell.controller('certificationController', ['$scope', '$http', '$routeParams', 
         var endOfWeek = today.day() == 6 ? today.clone() : today.clone().day(6);
         var hours = [];
         var flatCategories = [];
+        var averageWeeklyHours = 0;
 
         $scope.certId = id;
 
         $scope.chartData = null;
         $scope.xkey = 'startDate'; //'week';
         $scope.ykey = ['hours']; //, 'Supervision', 'Other'];
+        $scope.ykeyacc = ['accumulated'];
         $scope.xlabelformatter = function(date){ return moment(date).format('MMM D, YYYY'); };
+        $scope.weeklyLineColors = ['#ffc545'];
+        $scope.accumLineColors = ['#9ad268'];
 //        $scope.chartHoverCallback = function(index, options, content) {
 //
 //            var hover = "Week of " + moment($scope.chartData[index].startDate).format('MMM, D, YYYY');
@@ -117,6 +121,23 @@ shell.controller('certificationController', ['$scope', '$http', '$routeParams', 
             }
         }
 
+        //Calculates the projected completion date of the licensure
+        var calcCompletion = function(){
+
+            var sum = 0;
+            _.each(hours, function(h) {
+                sum += h.hours;
+            });
+
+            var beginDate = moment($scope.certification.begin_date);
+            var count = today.diff(beginDate, 'weeks');
+
+            averageWeeklyHours = sum / count;
+            var remainder = $scope.totals[0].required - $scope.totals[0].complete;
+            var weeksRemaining = remainder/averageWeeklyHours;
+            $scope.projectedCompletionDate = today.clone().add(weeksRemaining, 'weeks');
+        }
+
         //recursively calls a func against each of the categories.
         var eachCategory = function(categories, func){
             if(!categories) categories = $scope.categories;
@@ -182,45 +203,38 @@ shell.controller('certificationController', ['$scope', '$http', '$routeParams', 
             return categories;
         }
 
+        //Initializes the show certification controller
         var initialize = function(cert){
-            $scope.certification = cert;
 
             hours = cert.hours;
-            var complete = 0;
-            _.each(hours, function(h){ complete += h.hours; });
-            $scope.hoursComplete = complete;
 
-            var required = 0;
-            _.each(cert.categories, function(cat){ required += cat.required_hours; });
-            $scope.hoursRequired = required;
-
-            $scope.percentComplete = complete/required;
-            $scope.getPercentComplete = function(){
-              return $scope.hoursComplete / $scope.hoursRequired;
-            };
-
-//            $scope.getStyle = function(){
-//                return { width: $scope.percentComplete * 100 + '%'};
-//            };
-
+            $scope.certification = cert;
             $scope.categories = prepareCategories(cert.categories);
             $scope.chartData = getWeeklyTotals();
 
             eachCategory(null, calcCategoryTotal);
             eachCategory(null, function(cat) { flatCategories.push(cat); });
+            calcCompletion();
         }
 
+        //Gets the weekly totals that are used for charting purposes
         var getWeeklyTotals = function(){
 
             var data = [];
-            var chartBegin = startOfWeek.clone().subtract('months', 3);
+            var total = 0, count = 0;
+
+            //Get an array of hours that are from the last 6 months
+            var chartBegin = startOfWeek.clone().subtract('months', 6);
+            var filteredHours = _.filter(hours, function(h) { return !h.moment.isBefore(chartBegin, 'day'); });
 
             //Loop through the hours array and build out the array of chart data
-            _.each(hours, function(h) {
+            _.each(filteredHours, function(h) {
 
-                //Only go back 3 months for the chart
-                if(h.moment.isBefore(chartBegin, 'day'))
-                    return;
+                //Only go back 6 months for the chart
+//                if(h.moment.isBefore(chartBegin, 'day'))
+//                    return;
+                total += h.hours;
+                count += 1;
 
                 //Get the week for this hour
                 var start = h.moment.clone().day(0).toDate();
@@ -231,9 +245,19 @@ shell.controller('certificationController', ['$scope', '$http', '$routeParams', 
                     existing.hours += h.hours;
                 }
                 else{
-                    data.push({startDate: startKey, hours: h.hours});
+                    data.push({startDate: startKey, start: start, hours: h.hours});
                 }
             });
+
+            data.sort(function(d1, d2) { return d1.start > d2.start ? 1 : (d1.start == d2.start ? 0 : -1); });
+
+            var priorHours = _.filter(hours, function(h) { return h.moment.isBefore(chartBegin, 'day'); });
+            var accumulated = 0;
+            _.each(priorHours, function(h) { accumulated += h.hours; });
+            _.each(data, function(d){
+                accumulated += d.hours;
+                d.accumulated = accumulated;
+            })
 
             return data;
         }
@@ -368,6 +392,7 @@ shell.controller('certificationController', ['$scope', '$http', '$routeParams', 
 
                     //Refresh the chart data so it will update the chart
                     $scope.chartData = getWeeklyTotals();
+                    calcCompletion();
 
                     //Notify the user
                     alertify.success("Hours Updated!");
