@@ -12,9 +12,11 @@ shell.controller('certificationController', ['$scope', '$http', '$routeParams', 
 
         var id=  $routeParams.id;
         var today = moment();
+        var chartBeginDate = today.clone().subtract(6, 'months');
         var startOfWeek = today.day() == 0 ? today.clone() : today.clone().day(0);
         var endOfWeek = today.day() == 6 ? today.clone() : today.clone().day(6);
         var hours = [];
+        var hoursForCharting = [];
         var flatCategories = [];
         var averageWeeklyHours = 0;
 
@@ -35,6 +37,7 @@ shell.controller('certificationController', ['$scope', '$http', '$routeParams', 
 //            return hover; //content;
 //        };
 
+        $scope.sparklineData = null;
         $scope.totals = [];
 
         $scope.getProgressStyle = function(index){
@@ -98,7 +101,7 @@ shell.controller('certificationController', ['$scope', '$http', '$routeParams', 
 
         };
 
-        //Calcuates the total for a category and all its subcategories, if the category
+        //Calculates the total for a category and all its subcategories, if the category
         // has required hours
         var calcCategoryTotal = function(cat){
 
@@ -118,6 +121,7 @@ shell.controller('certificationController', ['$scope', '$http', '$routeParams', 
             if(categoryTotal){
                 categoryTotal.complete = getTotalHours(cat);
                 categoryTotal.percentComplete = categoryTotal.complete / cat.required_hours;
+                categoryTotal.sparklineData = getCategorySparkline(cat);
             }
         }
 
@@ -210,6 +214,8 @@ shell.controller('certificationController', ['$scope', '$http', '$routeParams', 
 
             $scope.certification = cert;
             $scope.categories = prepareCategories(cert.categories);
+            hoursForCharting = _.filter(hours, function(h) { return isBetween(h.moment, chartBeginDate, today);});
+
             $scope.chartData = getWeeklyTotals();
 
             eachCategory(null, calcCategoryTotal);
@@ -220,21 +226,54 @@ shell.controller('certificationController', ['$scope', '$http', '$routeParams', 
         //Gets the weekly totals that are used for charting purposes
         var getWeeklyTotals = function(){
 
-            var data = [];
-            var total = 0, count = 0;
+//            var data = [];
+//            var total = 0, count = 0;
 
+            //Only go back 6 months for the chart
             //Get an array of hours that are from the last 6 months
             var chartBegin = startOfWeek.clone().subtract('months', 6);
             var filteredHours = _.filter(hours, function(h) { return !h.moment.isBefore(chartBegin, 'day'); });
 
-            //Loop through the hours array and build out the array of chart data
-            _.each(filteredHours, function(h) {
+            var data = calcWeeklyTotals(filteredHours);
 
-                //Only go back 6 months for the chart
-//                if(h.moment.isBefore(chartBegin, 'day'))
-//                    return;
-                total += h.hours;
-                count += 1;
+            //Loop through the hours array and build out the array of chart data
+//            _.each(filteredHours, function(h) {
+//
+//                total += h.hours;
+//                count += 1;
+//
+//                //Get the week for this hour
+//                var start = h.moment.clone().day(0).toDate();
+//                var startKey = moment(start).format('YYYY-MM-DD');
+//
+//                var existing = _.find(data, function(d) { return d.startDate == startKey; });
+//                if(existing){
+//                    existing.hours += h.hours;
+//                }
+//                else{
+//                    data.push({startDate: startKey, start: start, hours: h.hours});
+//                }
+//            });
+
+//            data.sort(function(d1, d2) { return d1.start > d2.start ? 1 : (d1.start == d2.start ? 0 : -1); });
+
+            var priorHours = _.filter(hours, function(h) { return h.moment.isBefore(chartBegin, 'day'); });
+            var accumulated = 0;
+            _.each(priorHours, function(h) { accumulated += h.hours; });
+            _.each(data, function(d){
+                accumulated += d.hours;
+                d.accumulated = accumulated;
+            })
+
+            return data;
+        }
+
+        var calcWeeklyTotals = function(hours){
+
+            var data = [];
+
+            //Enumerate the hours and add to the array
+            _.each(hours, function(h) {
 
                 //Get the week for this hour
                 var start = h.moment.clone().day(0).toDate();
@@ -249,15 +288,8 @@ shell.controller('certificationController', ['$scope', '$http', '$routeParams', 
                 }
             });
 
+            //Sort the array by the date
             data.sort(function(d1, d2) { return d1.start > d2.start ? 1 : (d1.start == d2.start ? 0 : -1); });
-
-            var priorHours = _.filter(hours, function(h) { return h.moment.isBefore(chartBegin, 'day'); });
-            var accumulated = 0;
-            _.each(priorHours, function(h) { accumulated += h.hours; });
-            _.each(data, function(d){
-                accumulated += d.hours;
-                d.accumulated = accumulated;
-            })
 
             return data;
         }
@@ -306,7 +338,8 @@ shell.controller('certificationController', ['$scope', '$http', '$routeParams', 
         var getTotalHours = function(category, beginDate, endDate){
 
             var total = 0;
-            var relevantHours = _.filter(hours, function(h) { return isBetween(h.moment, beginDate, endDate); });
+            var relevantHours = getFilteredHours(null, beginDate, endDate);
+//            var relevantHours = _.filter(hours, function(h) { return isBetween(h.moment, beginDate, endDate); });
 
             if(category){
                 _.each(relevantHours, function(h){
@@ -317,6 +350,42 @@ shell.controller('certificationController', ['$scope', '$http', '$routeParams', 
             }
 
             return total;
+        }
+
+        //Gets the sparkline data for a category and date range (optional).  The sparkline data
+        // will just be an array of values which is the total weekly hours for this category.
+        var getCategorySparkline = function(category, beginDate, endDate){
+
+            //Get the array of hours to use here
+            var filteredHours = getFilteredHours(category, beginDate, endDate); //_.filter(, function(h) { return isInCategory(h, category); });
+            //Calculate weekly totals for those hours
+            var data = calcWeeklyTotals(filteredHours);
+            //Map to just an array of numbers for sparkline
+            var sparklineData = _.map(data, function(d) { return d.hours; });
+
+            return sparklineData;
+        }
+
+        //Gets an array of hours filtered by a specific category (optional) and date range (optional).  If no dates are provided,
+        // uses the default charting hours (6 mos).  If no category is provided, will use all categories.
+        var getFilteredHours = function(category, beginDate, endDate){
+            var filteredHours = [];
+
+            if(!beginDate && !endDate){
+                filteredHours = hoursForCharting;
+                if(category)
+                    filteredHours = _.filter(filteredHours, function(h) { return isInCategory(h, category); });
+            }
+            else{
+                if(!beginDate) beginDate = today.clone().subtract(6, 'months');
+                if(!endDate) endDate = today;
+                filteredHours = _.filter(hours, function(h){
+                    return (!category || isInCategory(h)) &&
+                        isBetween(h.moment, beginDate, endDate);
+                });
+            }
+
+            return filteredHours;
         }
 
         //Checks to see if an hour is in or under a certain category (hierarchically going down the hierarchy)
@@ -341,11 +410,9 @@ shell.controller('certificationController', ['$scope', '$http', '$routeParams', 
         //Checks a date and determines if it is within a date range.  Supports nulls within the date range
         var isBetween = function(date, begin, end){
 
-            var mmtDate = null; var mmtBegin = null; var mmtEnd = null;
-
-            mmtDate = _.isDate(date) ? moment(date) : date;
-            mmtBegin = begin ? (_.isDate(begin) ? moment(begin) : begin) : null;
-            mmtEnd = end ? (_.isDate(end) ? moment(end) : end) : null;
+            var mmtDate = _.isDate(date) ? moment(date) : date;
+            var mmtBegin = begin ? (_.isDate(begin) ? moment(begin) : begin) : null;
+            var mmtEnd = end ? (_.isDate(end) ? moment(end) : end) : null;
 
             var yes = true;
             if(mmtBegin) yes &= (mmtDate.isSame(mmtBegin, 'day') || mmtDate.isAfter(mmtBegin, 'day'));

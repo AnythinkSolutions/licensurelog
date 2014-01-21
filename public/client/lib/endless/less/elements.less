@@ -156,6 +156,10 @@
     border-bottom: 1px solid #eee;
     font-weight: 500;
     
+    &.dark  {
+        border-bottom: 1px solid #1a1a1a;       
+    }
+    
     .line   {
         display: block;
         height: 3px;
@@ -228,7 +232,7 @@
     min-height: 800px;
     padding-top: @topnav-height;
     margin-left: @sidebar-width;
-    .transition(margin-left 0.5s ease);
+    .transition(all 0.5s ease);
     
     @media (max-width: 480px) {
         min-width: 310px;
@@ -247,11 +251,12 @@
     }
     
     @media (max-width: 767px) {
+        left: 0;
         margin-left: 0;
     }
     
     @media (min-width: 768px) and (max-width: 868px)    {
-        margin-left:90px;
+        margin-left: @mini-sidebar-width;
         .transition(margin-left 0.5s ease);
     }
     
@@ -588,6 +593,7 @@ svg    {
         &.left  {
             .chat-body  {
                 margin-left: 70px;   
+                background-color: #fff;
                 
                 &:before    {
                     position: absolute;
@@ -608,6 +614,7 @@ svg    {
         &.right  {
             .chat-body  {
                 margin-right: 70px;
+                background-color: #fff;
                 
                 &:before    {
                     position: absolute;
@@ -863,15 +870,19 @@ footer  {
     background: @footer-color;
     color: @footer-font-color;
     margin-left: @sidebar-width;
-    border-top: 1px solid darken(@footer-color,5%);
     .transition(all 0.5s ease);
     
+    &.dark  {
+        background: #1a1a1a;  
+    }
+    
     @media (max-width: 767px) {
+        left: 0;
         margin-left: 0;
     }   
     
     @media (min-width: 768px) and (max-width: 868px)    {
-        margin-left:90px;
+        margin-left: @mini-sidebar-width;
         .transition(all 0.5s ease);
     }
     
@@ -957,7 +968,6 @@ footer  {
     display: inline-block;
     border: 1px solid @light-color;
     background: #fff;
-    color: #ccc;
     width: 25px;
     height: 25px;
     line-height: 25px;

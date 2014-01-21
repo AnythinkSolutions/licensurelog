@@ -1,6 +1,20 @@
 .panel  {
     background: @panel-background;
     
+    &.panel-dark    {
+        background: @panel-dark-background !important;
+        border-color: #060606 !important;
+        
+        .panel-heading  {
+            background: @panel-dark-background !important;
+            border-color: #060606 !important;
+        }
+        .panel-footer  {
+            background: @panel-dark-background !important;
+            border-color: #060606 !important; 
+        }
+    }
+    
     &.panel-default  {
         border-color: @light-color;
         

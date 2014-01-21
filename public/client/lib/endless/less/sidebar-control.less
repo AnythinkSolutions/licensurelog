@@ -6,14 +6,20 @@
     
     &.sidebar-mini {
         @media (min-width: 768px) {
-            aside   {
-                 width: @mini-sidebar-width;
-                
+            
+            #top-nav    {
                 .brand  {
+                    width: @mini-sidebar-width;
+                    .transition(all 0.5s ease);
+                    
                     .text-toggle    {
                         display: none;   
                     }
-                }
+                }    
+            }
+            
+            aside   {
+                 width: @mini-sidebar-width;
                 
                 .sidebar-inner  {
                     .size-toggle    {
@@ -40,6 +46,14 @@
                     .main-menu  {
                         >ul {
                             > li  {
+                                
+                                &:hover {
+                                    .submenu    {
+                                        display: block;   
+                                        .animation(fadeIn 0.4s ease);
+                                    }
+                                }
+                                
                                 > a   {
                                     text-align: center;
                                     font-size: 11px;
@@ -59,6 +73,51 @@
                                         display: none;
                                     }
                                 }
+                                
+                                .submenu    {   
+                                    display: none;
+                                    position: absolute;
+                                    top: 100%;
+                                    left: 0;
+                                    z-index: 1000;
+                                    display: none;
+                                    float: left;
+                                    min-width: 160px;
+                                    padding: 5px 0;
+                                    margin: 2px 0 0;
+                                    font-size: 14px;
+                                    list-style: none;
+                                    background-color: #fff;
+                                    border: 1px solid #ccc;
+                                    border: 1px solid rgba(0,0,0,0.15);
+                                    .border-radius(4px);
+                                    right: -160px;
+                                    left: auto;
+                                    top: -5px;
+                                    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+                                    box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+                                    background-clip: padding-box;
+                                    
+                                    li  {
+                                        a   {
+                                            background: #fff;
+                                            text-align: left;
+                                            padding: 4px 20px;
+                                            color: #333;
+                                            
+                                            .submenu-label  {
+                                                color: #333 !important;   
+                                            }
+                                            
+                                            &:hover {
+                                                background-color: #f2f2f2;
+                                                .submenu-label  {
+                                                    color: #222 !important;   
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -68,15 +127,9 @@
                     }
                 }
             }
-            #main-container ,#top-nav ,footer {
+            #main-container ,footer {
                 margin-left: @mini-sidebar-width;   
                 .transition(all 0.5s ease);
-            }
-            
-            #top-nav    {
-                &.fixed {
-                    left: 0px;
-                }   
             }
         }
     }
@@ -84,12 +137,19 @@
     &.sidebar-display {
         @media (max-width: 767px) {
             aside   {
-                margin-left: 0;   
+                left: 0;   
                 .transition(all 0.5s ease);
             }
-            #main-container ,#top-nav ,footer {
-                margin-left: @sidebar-width;   
-                .transition(margin-left 0.5s ease);
+            
+            #top-nav   {
+                left : 0;   
+                right: -@sidebar-width;   
+            }
+            
+            #main-container ,footer {
+                left: @sidebar-width;   
+                right: -@sidebar-width;   
+                .transition(all 0.5s ease);
             }
         }
     }

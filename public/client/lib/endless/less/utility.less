@@ -24,6 +24,10 @@
     overflow: hidden;
 }
 
+.scrollable {
+    overflow-y: auto;   
+}
+
 .overflow-visible    {
     overflow: visible;   
 }
@@ -200,20 +204,36 @@
     vertical-align: middle;
 }
 
+.rounded {
+    .border-radius(6px)   ;
+}
+
+.no-rounded {
+    .border-radius(0)   ;
+}
+
 .no-border {
     border: none !important;   
 }
 
 .border {
-    border: 1px solid rgba(0,0,0,0.2);
+    border: 1px solid #eee;
 }
 
 .border-top  {
-    border-top: 1px solid rgba(0,0,0,0.2);
+    border-top: 1px solid #eee;
+}
+
+.border-left  {
+    border-left: 1px solid #eee;
+}
+
+.border-right  {
+    border-right: 1px solid #eee;
 }
 
 .border-bottom  {
-    border-bottom: 1px solid rgba(0,0,0,0.2);
+    border-bottom: 1px solid #eee;
 }
 
 .font-14 {

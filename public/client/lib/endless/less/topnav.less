@@ -1,38 +1,11 @@
 #top-nav    {
     height: @topnav-height;
-    margin-left: @sidebar-width;
-    padding: 0 10px;
+    padding-right: 10px;
     background-color: @topnav-color;
     white-space: nowrap;
     min-width: 310px;
     border-bottom: 1px solid darken(@topnav-color,5%);
     .transition(all 0.5s ease);
-    
-    @media (max-width: 480px) {
-        min-width: 310px;
-    }
-    
-    @media (min-width: 481px) and (max-width: 550px) {
-        min-width: 471px;
-        padding: 0 5px;   
-    }
-    
-    @media (min-width: 551px) and (max-width: 600px) {
-        min-width: 541px;
-    }
-    
-    @media (min-width: 601px) and (max-width: 670px) {
-        min-width: 591px;
-    }
-    
-    @media (max-width: 767px) {
-        margin-left: 0;   
-    }
-    
-    @media (min-width: 768px) and (max-width: 868px)    {
-        margin-left: 90px;
-        .transition(all 0.5s ease);
-    }
     
     &.fixed  {
         position: fixed;
@@ -41,12 +14,23 @@
         z-index: 1000;
        
         @media (max-width: 767px) {
-            left: 0;
+            left: -@sidebar-width;
         }
     }
     
+    .brand  {
+        text-align: center;
+        font-size: 17px;
+        line-height: @topnav-height;   
+        width: @sidebar-width;
+        color: @topnav-font-color;
+        background: @sidebar-color;
+        float: left;
+        .transition(all 0.5s ease);
+    }
+    
    .page-title  {
-        float:left;
+        float: left;
         line-height: @topnav-height;   
         font-weight: 500;
         color:@topnav-font-color;
@@ -198,5 +182,36 @@
                 border-bottom-color: @light-color;   
             }
         }
+    }
+    
+    @media (max-width: 480px) {
+        min-width: 310px;
+    }
+    
+    @media (min-width: 481px) and (max-width: 550px) {
+        min-width: 471px;
+    }
+    
+    @media (min-width: 551px) and (max-width: 600px) {
+        min-width: 541px;
+    }
+    
+    @media (min-width: 601px) and (max-width: 670px) {
+        min-width: 591px;
+    }
+    
+    @media (max-width: 767px) {
+        left: -@sidebar-width;
+    }
+    
+    @media (min-width: 768px) and (max-width: 868px)    {
+        .transition(all 0.5s ease);
+        
+        .brand  {
+            width: @mini-sidebar-width;
+            .text-toggle    {
+                display: none;   
+            }
+        }   
     }
 }

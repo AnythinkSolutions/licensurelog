@@ -4,12 +4,21 @@ aside   {
     float: left;
     width: @sidebar-width;
     z-index: 100;
-    top: 0;
+    padding-top: @topnav-height;
     bottom: 0;
     left: 0;  
     background-color: @sidebar-color;
     height: 100%;
     .transition(all 0.5s ease);
+
+    &::-webkit-scrollbar {
+        width: 3px;
+        height: 3px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(50,50,50,0.4);
+    }
 
     &.fixed {
         position: fixed;       
@@ -55,18 +64,7 @@ aside   {
         }
     }
     
-    .brand  {
-        height: @topnav-height;
-        background: @sidebar-color;
-        color: @sidebar-font-color;
-        text-align: center;
-        font-size: 17px;
-        line-height: @topnav-height;
-        border-bottom: 1px solid darken(@sidebar-color,3%);
-    }
-    
     .sidebar-inner  {
-        height: 100%;
         border-right: 1px solid darken(@sidebar-color,5%);
         
         .user-block   {
@@ -218,7 +216,6 @@ aside   {
                 }
                 
                 .dropdown-menu  {
-                    
                     .animation(fadeIn 0.8s ease);
                     
                     @media (min-width: 768px) {
@@ -246,6 +243,36 @@ aside   {
                         }
                     }
                 }
+                
+                .submenu    {
+                    display: none;   
+                    
+                    li  {
+                         
+                        a   {
+                            display: block;
+                            background-color : lighten(@sidebar-color,3%);
+                            color: lighten(@sidebar-font-color,5%);
+                            font-weight: normal;
+                            padding: 9px 20px;
+                            font-size: 12px;
+                            .transition(all 0.4s ease);
+                            
+                            .submenu-label    {
+                                display:block;  
+                                .transition(all 0.4s ease);
+                            }
+                            
+                            &:hover {
+                                .submenu-label    {
+                                    color: #fff;
+                                    .transform(translateX(5px));
+                                    .transition(all 0.4s ease);
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
         
@@ -257,8 +284,7 @@ aside   {
     }
     
     @media (max-width: 767px) {
-        margin-left: -@sidebar-width;
-        position: absolute !important;
+        left: -@sidebar-width;
     }
     
     @media (min-width: 768px) and (max-width: 868px)    {

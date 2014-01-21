@@ -90,13 +90,16 @@
                         <tbody ng-repeat="total in totals">
                             <tr>
                                 <td class="col-md-2"><h5>{{total.name}}</h5></td>
-                                <td class="col-md-7">
+                                <td class="col-md-5">
                                     <div class="progress progress-striped active" style="height:20px;">
                                         <div class="progress-bar" style="height: 20px;" ng-style="getProgressStyle($index)"></div>
                                     </div>
                                 </td>
                                 <td class="col-md-1">{{total.percentComplete | percentage}}</td>
                                 <td class="col-md-2">{{total.complete}} of {{total.required}} hours</td>
+                                <td class="col-md-2">
+                                    <ct-sparkline ct-sparkline-data="total.sparklineData"></ct-sparkline>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

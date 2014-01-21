@@ -25,6 +25,42 @@ shell.directive('a', function() {
     };
 });
 
+shell.directive('ctSparkline', [function(){
+    return{
+        restrict: 'E',
+        template: '<div></div>',
+        replace: true,
+        scope: {
+            data: "&ctSparklineData",
+            type: "&ctSparklineType",
+            color: "&ctSparklineColor"
+        },
+
+        //observe and manipulate the DOM
+        link: function(scope, element, attrs){
+
+            var data = scope.data;
+            var opts = {
+                type: scope.type() || 'bar',
+                barColor: scope.color() || '#92cf5c'
+
+            };
+
+            var setData = function(data){
+                if(data)
+                    $(element).sparkline(data, opts);
+            };
+
+            //attrs.$observe(data, setData);
+            scope.$watch(data, function(newVal, oldVal){
+               if(newVal)
+                    setData(newVal);
+            }, true);
+
+        }
+    }
+}]);
+
 shell.directive('ctAreaChart', function(){
 
     return{
@@ -36,22 +72,9 @@ shell.directive('ctAreaChart', function(){
           xformat: "&ctChartXlabelFormat",
           lineColors: "&ctChartLineColors"//,
 //          hoverCallback: "&ctChartHoverCallback"//,
-//          ready: "&ctChartReady"
         },
         link: function(scope, element, attributes){
 
-            //var data = scope.chartData;
-
-            //Morris Chart
-//            var overviewChart = Morris.Area({
-//                element: element[0].id,
-//                data: data,
-//                xkey: 'y',
-//                ykeys: ['Item1', 'Item2' , 'Item3'],
-//                labels: ['Item1', 'Item2', 'Item3'],
-//                lineColors: ['#fe402b','#9ad268' ,'#ffc545']
-//            });
-//            var ready = scope.ready;
             var data = scope.data;
             var xkey = scope.xkey();
             var ykey = scope.ykey();
