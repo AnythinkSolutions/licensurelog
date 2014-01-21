@@ -26,8 +26,8 @@ $(function	()	{
 		$('#top-nav').removeClass('skin-3');
 		$('#top-nav').removeClass('skin-4');
 		
-		$('aside').addClass('skin-3');
-		$('#top-nav').addClass('skin-3');
+		$('aside').addClass('skin-1');
+		$('#top-nav').addClass('skin-1');
 	}
 	
 	//Skin color

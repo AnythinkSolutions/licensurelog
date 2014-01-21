@@ -1,3 +1,151 @@
-<h2>Welcome to the work of Certification Tracker</h2>
+<div id="work-view">
 
-{{ message }}
+    <div class="row" ng-show="isInitializing">
+        <div class="overlay-inner">
+            <div id="followingBallsG">
+                <div id="followingBallsG_1" class="followingBallsG">
+                </div>
+                <div id="followingBallsG_2" class="followingBallsG">
+                </div>
+                <div id="followingBallsG_3" class="followingBallsG">
+                </div>
+                <div id="followingBallsG_4" class="followingBallsG">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="certification-hours-wrapper" class="row" ng-hide="isInitializing">
+        <div class="col-md-11">
+            <h4 class="headline m-top-sm">
+                <span>Hours Log</span>
+                <span class="line"></span>
+            </h4>
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button class="btn btn-xs btn-info" ng-click="changeStartDate(-1, 'month')">
+                            <i class="fa fa-angle-double-left"></i>
+                        </button>
+                    </td>
+                    <td colspan="7">
+                        <div style="text-align:center">
+                            <span>Week of {{getDate(0) | date: "M/d"}} to {{getDate(6) | date: "M/d"}}</span>
+                        </div>
+                    </td>
+                    <td>
+                        <button class="btn btn-xs btn-info" ng-click="changeStartDate(1, 'months')">
+                            <i class="fa fa-angle-double-right"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="min-width:200px;">Category Name</th>
+                    <th>
+                        <button class="btn btn-xs btn-info" ng-click="changeStartDate(-7, 'days')">
+                            <i class="fa fa-angle-left"></i>
+                        </button>
+                    </th>
+                    <th>Sun {{getDate(0) | date: "M/d"}}</th>
+                    <th>Mon {{getDate(1) | date: "M/d"}}</th>
+                    <th>Tue {{getDate(2) | date: "M/d"}}</th>
+                    <th>Wed {{getDate(3) | date: "M/d"}}</th>
+                    <th>Thu {{getDate(4) | date: "M/d"}}</th>
+                    <th>Fri {{getDate(5) | date: "M/d"}}</th>
+                    <th>Sat {{getDate(6) | date: "M/d"}}</th>
+                    <th>
+                        <button class="btn btn-xs btn-info" ng-click="changeStartDate(7, 'days')">
+                            <i class="fa fa-angle-right"></i>
+                        </button>
+                    </th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr ng-repeat-start="cat in categories" ng-class="{'category-group': cat.is_group}">
+                    <ct-hours-input category="cat"></ct-hours-input>
+                    <td><a href="#/categories/{{cat.id}}">{{cat.name}}</a></td>
+                    <td></td>
+                    <td><ct-hours-input-cell ct-category="cat" ct-day="0"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="cat" ct-day="1"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="cat" ct-day="2"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="cat" ct-day="3"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="cat" ct-day="4"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="cat" ct-day="5"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="cat" ct-day="6"></ct-hours-input-cell></td>
+                    <td><span ng-hide="{{cat.is_group}}">{{getCategoryTotal(cat.id)}}</span></td>
+                </tr>
+                <tr ng-repeat-start="subcat in cat.subcategories" ng-class="{'category-group': subcat.is_group}">
+                    <td><a style="margin-left:15px;" href="#/categories/{{subcat.id}}">{{subcat.name}}</a></td>
+                    <td></td>
+                    <td><ct-hours-input-cell ct-category="subcat" ct-day="0"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="subcat" ct-day="1"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="subcat" ct-day="2"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="subcat" ct-day="3"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="subcat" ct-day="4"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="subcat" ct-day="5"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="subcat" ct-day="6"></ct-hours-input-cell></td>
+                    <td><span ng-hide="{{subcat.is_group}}">{{getCategoryTotal(subcat.id)}}</span></td>
+                </tr>
+                <tr ng-repeat-start="sscat in subcat.subcategories" ng-class="{'category-group': sscat.is_group}">
+                    <td><a style="margin-left:30px;" href="#/categories/{{sscat.id}}">{{sscat.name}}</a></td>
+                    <td></td>
+                    <td><ct-hours-input-cell ct-category="sscat" ct-day="0"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="sscat" ct-day="1"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="sscat" ct-day="2"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="sscat" ct-day="3"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="sscat" ct-day="4"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="sscat" ct-day="5"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="sscat" ct-day="6"></ct-hours-input-cell></td>
+                    <td><span ng-hide="{{sscat.is_group}}">{{getCategoryTotal(sscat.id)}}</span></td>
+                </tr>
+                <tr ng-visible="sscat.subcategories.length > 0" ng-class="{'category-group': ssscat.is_group}" ng-repeat-start="ssscat in sscat.subcategories">
+                    <td><a style="margin-left:45px;" href="#/categories/{{ssscat.id}}">{{ssscat.name}}</a></td>
+                    <td></td>
+                    <td><ct-hours-input-cell ct-category="ssscat" ct-day="0"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="ssscat" ct-day="1"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="ssscat" ct-day="2"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="ssscat" ct-day="3"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="ssscat" ct-day="4"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="ssscat" ct-day="5"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="ssscat" ct-day="6"></ct-hours-input-cell></td>
+                    <td><span ng-hide="{{ssscat.is_group}}">{{getCategoryTotal(ssscat.id)}}</span></td>
+                </tr>
+                <tr ng-visible="ssscat.subcategories.length > 0" ng-class="{'category-group': sssscat.is_group}" ng-repeat="sssscat in ssscat.subcategories">
+                    <td><a style="margin-left:60px;" href="#/categories/{{sssscat.id}}">{{sssscat.name}}</a></td>
+                    <td></td>
+                    <td><ct-hours-input-cell ct-category="sssscat" ct-day="0"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="sssscat" ct-day="1"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="sssscat" ct-day="2"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="sssscat" ct-day="3"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="sssscat" ct-day="4"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="sssscat" ct-day="5"></ct-hours-input-cell></td>
+                    <td><ct-hours-input-cell ct-category="sssscat" ct-day="6"></ct-hours-input-cell></td>
+                    <td><span ng-hide="{{sssscat.is_group}}">{{getCategoryTotal(sssscat.id)}}</span></td>
+                </tr>
+                <tr ng-repeat-end></tr>
+                <tr ng-repeat-end></tr>
+                <tr ng-repeat-end></tr>
+                <tr ng-repeat-end></tr>
+                <tr>
+                    <td>Total Hours</td>
+                    <td></td>
+                    <td>{{getDailyTotal(0)}}</td>
+                    <td>{{getDailyTotal(1)}}</td>
+                    <td>{{getDailyTotal(2)}}</td>
+                    <td>{{getDailyTotal(3)}}</td>
+                    <td>{{getDailyTotal(4)}}</td>
+                    <td>{{getDailyTotal(5)}}</td>
+                    <td>{{getDailyTotal(6)}}</td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <button class="btn btn-primary" ng-click="saveHours()"><i class="fa fa-save"></i> Save</button>
+        </div>
+    </div>
+
+</div>

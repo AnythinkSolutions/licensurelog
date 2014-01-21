@@ -49,9 +49,15 @@ shell.config(['$routeProvider',
             })
 
             // route for the certificate
-            .when('/certifications/edit/:id', {
+            .when('/certifications/:id/edit', {
                 templateUrl : 'client/app/certifications/edit.html',
                 controller : 'editCertController'
+            })
+
+            // route for the work
+            .when('/certifications/:id/work', {
+                templateUrl : 'client/app/work/index.html',
+                controller  : 'workController'
             })
 
             // route for the certificate
@@ -64,12 +70,6 @@ shell.config(['$routeProvider',
             .when('/certifications', {
                 templateUrl : 'client/app/certifications/index.html',
                 controller  : 'certificationsController'
-            })
-
-            // route for the work
-            .when('/work', {
-                templateUrl : 'client/app/work/index.html',
-                controller  : 'workController'
             })
 
             // route for login

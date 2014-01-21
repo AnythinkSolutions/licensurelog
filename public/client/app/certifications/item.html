@@ -1,6 +1,21 @@
 <div id="certification-view">
 
-    <div class="row">
+    <div class="row" ng-show="isInitializing">
+        <div class="overlay-inner">
+            <div id="followingBallsG">
+                <div id="followingBallsG_1" class="followingBallsG">
+            </div>
+                <div id="followingBallsG_2" class="followingBallsG">
+            </div>
+                <div id="followingBallsG_3" class="followingBallsG">
+            </div>
+                <div id="followingBallsG_4" class="followingBallsG">
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" ng-hide="isInitializing">
         <div class="col-md-12">
             <!--<div>-->
                 <!--<span>-->
@@ -19,8 +34,11 @@
                 <span title="{{certification.description}}">{{certification.name}}</span>
                 <!--<span style="font-style:normal;font-size:11px;font-weight:normal;">{{certification.description}}</span>-->
                 <div class="pull-right">
-                    <a href="#certifications/edit/{{certId}}" class="btn btn-sm btn-primary">
+                    <a href="#certifications/{{certId}}/edit" class="btn btn-sm btn-primary">
                         <i class="fa fa-edit"></i> Edit
+                    </a>
+                    <a href="#certifications/{{certId}}/work" class="btn btn-sm btn-primary">
+                        <i class="fa fa-edit"></i> Enter Hours
                     </a>
                 </div>
                 <span class="line"></span>
@@ -38,41 +56,43 @@
         <!--</div>-->
     <!--</div>-->
 
-    <div id="certification-statistics-row" class="row">
-        <div class="col-md-4">
-            <div class="panel panel-default panel-stat2 bg-success">
-                <div class="panel-body">
-                    <span class="stat-icon"><i class="fa fa-clock-o"></i></span>
-                    <div class="pull-right text-right">
-                        <div class="value">{{totals[0].complete | number}}</div>
-                        <div class="title">Hours Complete</div>
+    <div id="certification-statistics-row" class="row" ng-hide="isInitializing">
+        <div>
+            <div class="col-md-4 fadeInDown animation-delay-1">
+                <div class="panel panel-default panel-stat2 bg-success">
+                    <div class="panel-body">
+                        <span class="stat-icon"><i class="fa fa-clock-o"></i></span>
+                        <div class="pull-right text-right">
+                            <div class="value">{{totals[0].complete | number}}</div>
+                            <div class="title">Hours Complete</div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-5">
-            <div class="panel panel-default panel-stat2 bg-success">
-                <div class="panel-body">
-                    <span class="stat-icon"><i class="fa fa-calendar-o"></i></span>
-                    <div class="pull-right text-right">
-                        <div class="value">{{projectedCompletionDate.format('M-D-YYYY')}}</div>
-                        <div class="title">Projected Completion</div>
+            <div class="col-md-5 fadeInDown animation-delay-1">
+                <div class="panel panel-default panel-stat2 bg-success">
+                    <div class="panel-body">
+                        <span class="stat-icon"><i class="fa fa-calendar-o"></i></span>
+                        <div class="pull-right text-right">
+                            <div class="value">{{projectedCompletionDate.format('M-D-YYYY')}}</div>
+                            <div class="title">Projected Completion</div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-3">
-            <div class="panel panel-default panel-stat2 bg-info">
-                <div class="panel-body">
-                    <div class="value">{{ totals[0].percentComplete | percentage }}</div>
-                    <div class="title">Complete</div>
+            <div class="col-md-3 fadeInDown animation-delay-1">
+                <div class="panel panel-default panel-stat2 bg-info">
+                    <div class="panel-body">
+                        <div class="value">{{ totals[0].percentComplete | percentage }}</div>
+                        <div class="title">Complete</div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="certification-progress-row" class="row">
-        <div class="col-md-12">
+    <div id="certification-progress-row" class="row" ng-hide="isInitializing">
+        <div class="col-md-12 fadeInDown animation-delay-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4>Progress</h4>
@@ -108,8 +128,8 @@
         </div>
     </div>
 
-    <div id="certification-chart-row" class="row">
-        <div class="col-md-6">
+    <div id="certification-chart-row" class="row" ng-hide="isInitializing">
+        <div class="col-md-6 fadeInDown animation-delay-3">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4>Weekly Hours</h4>
@@ -154,7 +174,7 @@
     </div>
 
     <!--<a href="#/certifications/edit/{{certId}}" class="btn btn-default">Edit</a>-->
-    <div id="certification-hours-wrapper" class="row">
+    <div id="certification-hours-wrapper" class="row" ng-hide="isInitializing">
         <div class="col-md-11">
             <h4 class="headline m-top-sm">
                 <span>Hours Log</span>

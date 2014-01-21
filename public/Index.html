@@ -83,19 +83,103 @@
         <div id="wrapper" class="preload">
 
             <div id="top-nav" class="skin-1 fixed">
-                <div class="pull-right" style="margin-top:15px;color:#fff;">
-                    <span>by Anythink Solutions</span>
+                <div class="brand">
+                    <span>
+                        <i class="glyphicon glyphicon-certificate"></i> Licensure Log
+                    </span>
                 </div>
+                <!--<div class="pull-right" style="margin-top:15px;color:#fff;">-->
+                    <!--<span>by Anythink Solutions</span>-->
+                <!--</div>-->
+                <ul class="nav-notification clearfix">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-envelope fa-lg"></i>
+                            <span class="notification-label bounceIn animation-delay4">1</span>
+                        </a>
+                        <ul class="dropdown-menu message dropdown-1">
+                            <li><a>You have 1 new unread messages</a></li>
+                            <li>
+                                <a class="clearfix" href="#">
+                                    <img src="client/content/img/user.jpg" alt="User Avatar">
+                                    <div class="detail">
+                                        <strong>John Doe</strong>
+                                        <p class="no-margin">
+                                            Lorem ipsum dolor sit amet...
+                                        </p>
+                                        <small class="text-muted"><i class="fa fa-check text-success"></i> 27m ago</small>
+                                    </div>
+                                </a>
+                            </li>
+                            <li><a href="#">View all messages</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown hidden-xs">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-tasks fa-lg"></i>
+                            <span class="notification-label bounceIn animation-delay5">1</span>
+                        </a>
+                        <ul class="dropdown-menu task dropdown-2">
+                            <li><a href="#">You have 4 tasks to complete</a></li>
+                            <li>
+                                <a href="#">
+                                    <div class="clearfix">
+                                        <span class="pull-left">Bug Fixes</span>
+                                        <small class="pull-right text-muted">78%</small>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" style="width:78%"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li><a href="#">View all tasks</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-bell fa-lg"></i>
+                            <span class="notification-label bounceIn animation-delay6">1</span>
+                        </a>
+                        <ul class="dropdown-menu notification dropdown-3">
+                            <li><a href="#">You have 1 new notifications</a></li>
+                            <li>
+                                <a href="#">
+								<span class="notification-icon bg-warning">
+									<i class="fa fa-warning"></i>
+								</span>
+                                    <span class="m-left-xs">Lorem ipsum dolor sit amet...</span>
+                                    <span class="time text-muted">Just now</span>
+                                </a>
+                            </li>
+                            <li><a href="#">View all notifications</a></li>
+                        </ul>
+                    </li>
+                    <li ng-show="appsecurity.currentUser.isAuthenticated" class="profile dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <strong>{{appsecurity.currentUser.name}}</strong>
+                            <span><i class="fa fa-chevron-down"></i></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="clearfix" href="#">
+                                    <img src="client/content/img/user.jpg" alt="User Avatar">
+                                    <div class="detail">
+                                        <strong>{{appsecurity.currentUser.name}}</strong>
+                                        <p class="grey">{{appsecurity.currentUser.email}}</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li><a tabindex="-1" href="#profile" class="main-link"><i class="fa fa-edit fa-lg"></i> Edit profile</a></li>
+                            <!--<li><a tabindex="-1" href="gallery.html" class="main-link"><i class="fa fa-picture-o fa-lg"></i> Photo Gallery</a></li>-->
+                            <!--<li><a tabindex="-1" href="#" class="theme-setting"><i class="fa fa-cog fa-lg"></i> Setting</a></li>-->
+                            <li class="divider"></li>
+                            <li><a tabindex="-1" href="#" ng-click="logOut()" class="main-link"><i class="fa fa-lock fa-lg"></i> Log out</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
 
             <aside class="skin-1 fixed">
-                <div class="brand">
-                    <span>
-                        <a href="/">
-                            <!--<i class="glyphicon glyphicon-certificate"></i>--> Licensure Log
-                        </a>
-                    </span>
-                </div>
                 <div class="sidebar-inner">
                     <div class="size-toggle">
                         <a class="btn btn-sm" id="sizeToggle">
@@ -153,6 +237,7 @@
                                     </span>
                                     <span class="menu-hover"></span>
                                 </a>
+                            </li>
                             <li ng-class="getHashClass('/categories')">
                                 <a href="#categories">
                                     <span class="menu-icon">
@@ -161,18 +246,20 @@
                                     <span class="text">
                                         Categories
                                     </span>
-                                <span class="menu-hover"></span>
-                            </a>
-                            <li ng-class="getHashClass('/work')">
-                                <a href="#work">
-                                    <span class="menu-icon">
-                                        <i class="fa fa-clock-o fa-lg"></i>
-                                    </span>
-                                    <span class="text">
-                                        Hours
-                                    </span>
-                                <span class="menu-hover"></span>
-                            </a>
+                                    <span class="menu-hover"></span>
+                                </a>
+                            </li>
+                            <!--<li ng-class="getHashClass('/work')">-->
+                                <!--<a href="#work">-->
+                                    <!--<span class="menu-icon">-->
+                                        <!--<i class="fa fa-clock-o fa-lg"></i>-->
+                                    <!--</span>-->
+                                    <!--<span class="text">-->
+                                        <!--Hours-->
+                                    <!--</span>-->
+                                <!--<span class="menu-hover"></span>-->
+                            <!--</a>-->
+                            <!--</li>-->
                         </ul>
                     </div>
                 </div>

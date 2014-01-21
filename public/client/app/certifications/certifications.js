@@ -10,6 +10,8 @@ shell.controller('certificationsController', ['$scope', '$http', 'datacontext',
 shell.controller('certificationController', ['$scope', '$http', '$routeParams', 'datacontext',
     function($scope, $http, $routeParams, datacontext){
 
+        $scope.isInitializing = true;
+
         var id=  $routeParams.id;
         var today = moment();
         var chartBeginDate = today.clone().subtract(6, 'months');
@@ -221,6 +223,8 @@ shell.controller('certificationController', ['$scope', '$http', '$routeParams', 
             eachCategory(null, calcCategoryTotal);
             eachCategory(null, function(cat) { flatCategories.push(cat); });
             calcCompletion();
+
+            $scope.isInitializing = false;
         }
 
         //Gets the weekly totals that are used for charting purposes
