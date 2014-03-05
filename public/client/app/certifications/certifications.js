@@ -537,3 +537,17 @@ shell.controller('editCertController', ['$scope', '$http', '$routeParams', '$loc
 
 }]);
 
+shell.controller('exportCertController', ['$scope', '$routeParams', '$http', 'datacontext',
+    function($scope, $routeParams, datacontext){
+
+        var prepareHours = function(){
+
+        }
+
+        var id = $routeParams.id;
+        if(id){
+            $scope.certification = datacontext.find_certification( {id: id} )
+                .then(prepareHours);
+        }
+
+}]);

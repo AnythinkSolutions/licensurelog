@@ -2,49 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="024fa96d-f417-4578-a0fe-4846223f3f9f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/Index.html" afterPath="$PROJECT_DIR$/public/Index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/CertTracker.iml" afterPath="$PROJECT_DIR$/.idea/CertTracker.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/client/app/certifications/certifications.js" afterPath="$PROJECT_DIR$/public/client/app/certifications/certifications.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/client/lib/endless/css/endless.css" afterPath="$PROJECT_DIR$/public/client/lib/endless/css/endless.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/client/lib/endless/js/endless/endless.js" afterPath="$PROJECT_DIR$/public/client/lib/endless/js/endless/endless.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/client/app/work/index.html" afterPath="$PROJECT_DIR$/public/client/app/work/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/client/app/certifications/item.html" afterPath="$PROJECT_DIR$/public/client/app/certifications/item.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/client/app/shell.js" afterPath="$PROJECT_DIR$/public/client/app/shell.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/.idea/workspace.xml" afterPath="$PROJECT_DIR$/public/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/client/app/certifications/index.html" afterPath="$PROJECT_DIR$/public/client/app/certifications/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="CertTracker.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1390272252954" ignored="false" />
+    <file path="/Dummy.txt" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1394025746758" ignored="false" />
     <file path="/index.html.erb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387057033349" ignored="false" />
     <file path="/_form.html.erb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387055803984" ignored="false" />
     <file path="/categories_controller.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1389240517492" ignored="false" />
     <file path="/show.html.erb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387051479108" ignored="false" />
     <file path="/Ruby Console" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387049989802" ignored="false" />
-    <file path="/Gemfile" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1388850786843" ignored="false" />
-    <file path="/fragment.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1389024528492" ignored="false" />
+    <file path="/Gemfile" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1394025469981" ignored="false" />
+    <file path="/fragment.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1394025822564" ignored="false" />
     <file path="/index.json.jbuilder" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1388505517199" ignored="false" />
     <file path="/Index.html" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1388274283521" ignored="false" />
-    <file path="/routes.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1389193923584" ignored="false" />
+    <file path="/routes.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391640461777" ignored="false" />
     <file path="/20131214211521_add_cap_to_category.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387055743172" ignored="false" />
     <file path="/category.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1388500129814" ignored="false" />
     <file path="/application.css" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387056963865" ignored="false" />
     <file path="/shell.js" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1388171002901" ignored="false" />
     <file path="/home.html" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387058612275" ignored="false" />
     <file path="/index.html" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1388274725994" ignored="false" />
-    <file path="/a.dummy" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1388850272524" ignored="false" />
+    <file path="/a.dummy" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1394025122927" ignored="false" />
     <file path="/shellSpec.js" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387174088012" ignored="false" />
     <file path="/certifications.js" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1388162899833" ignored="false" />
-    <file path="$PROJECT_DIR$/../../termscout/MVP/app/controllers/v1/filings_controller.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387762606921" ignored="false" />
+    <file path="$PROJECT_DIR$/../../termscout/MVP/app/controllers/v1/filings_controller.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391632304825" ignored="false" />
     <file path="/filings_controller.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387484407189" ignored="false" />
     <file path="$PROJECT_DIR$/../../termscout/MVP/app/models/filing.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387762605063" ignored="false" />
     <file path="/filing.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387410085375" ignored="false" />
-    <file path="$PROJECT_DIR$/../../termscout/MVP/app/models/user.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387813726649" ignored="false" />
-    <file path="/user.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1388847159084" ignored="false" />
-    <file path="$PROJECT_DIR$/../../termscout/MVP/config/routes.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387762606921" ignored="false" />
+    <file path="$PROJECT_DIR$/../../termscout/MVP/app/models/user.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391551028979" ignored="false" />
+    <file path="/user.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391216392192" ignored="false" />
+    <file path="$PROJECT_DIR$/../../termscout/MVP/config/routes.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391649627290" ignored="false" />
     <file path="$PROJECT_DIR$/../../termscout/MVP/app/views/v1/filings/index.rabl" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387324418168" ignored="false" />
-    <file path="/index.rabl" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387321607368" ignored="false" />
+    <file path="/index.rabl" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1390887564951" ignored="false" />
     <file path="$PROJECT_DIR$/../../termscout/MVP/app/views/v1/filings/show.rabl" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387324418168" ignored="false" />
     <file path="/show.rabl" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387321618313" ignored="false" />
-    <file path="/certifications_controller.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1389241276001" ignored="false" />
+    <file path="/certifications_controller.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1394024685275" ignored="false" />
     <file path="/item.html" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1388009087288" ignored="false" />
     <file path="/categories.js" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1388184336111" ignored="false" />
     <file path="$PROJECT_DIR$/../../termscout/MVP/app/models/company.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387324418168" ignored="false" />
@@ -54,7 +52,7 @@
     <file path="$PROJECT_DIR$/../../termscout/MVP/app/views/v1/leases/index.rabl" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387321644390" ignored="false" />
     <file path="$PROJECT_DIR$/../../termscout/MVP/app/views/v1/leases/show.rabl" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387324418168" ignored="false" />
     <file path="$PROJECT_DIR$/../../termscout/MVP/db/schema.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387813709759" ignored="false" />
-    <file path="$PROJECT_DIR$/../../termscout/MVP/Gemfile" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387811077275" ignored="false" />
+    <file path="$PROJECT_DIR$/../../termscout/MVP/Gemfile" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391649627290" ignored="false" />
     <file path="$PROJECT_DIR$/../../termscout/MVP/db/seeds.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387762606921" ignored="false" />
     <file path="/seeds.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387338141049" ignored="false" />
     <file path="$PROJECT_DIR$/../../termscout/MVP/app/views/v1/filings/companylist.rabl" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387762606921" ignored="false" />
@@ -64,8 +62,8 @@
     <file path="/app.scss" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387419775915" ignored="false" />
     <file path="$PROJECT_DIR$/../../termscout/MVP/config/environments/production.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387813467878" ignored="false" />
     <file path="/production.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387813230319" ignored="false" />
-    <file path="$PROJECT_DIR$/../../termscout/MVP/config/environments/development.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387813039128" ignored="false" />
-    <file path="/development.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1388846099135" ignored="false" />
+    <file path="$PROJECT_DIR$/../../termscout/MVP/config/environments/development.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391635097029" ignored="false" />
+    <file path="/development.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391622921953" ignored="false" />
     <file path="$PROJECT_DIR$/../../termscout/MVP/app/views/alert_mailer/alert_email.html.erb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387812464198" ignored="false" />
     <file path="$PROJECT_DIR$/../../termscout/MVP/app/views/alert_mailer/alert_email.text.erb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387812376239" ignored="false" />
     <file path="$PROJECT_DIR$/../../termscout/MVP/config/environment.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387813077792" ignored="false" />
@@ -79,7 +77,7 @@
     <file path="/new.html" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1387930118925" ignored="false" />
     <file path="/certService.js" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1388274378589" ignored="false" />
     <file path="/edit.html" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1388172664873" ignored="false" />
-    <file path="/show.json.jbuilder" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1388841439488" ignored="false" />
+    <file path="/show.json.jbuilder" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391203871436" ignored="false" />
     <file path="/certification.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1388500153230" ignored="false" />
     <file path="/_category.json.jbuilder" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1388841409658" ignored="false" />
     <file path="/catService.js" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1388184021451" ignored="false" />
@@ -88,14 +86,45 @@
     <file path="/workitem.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1388500195059" ignored="false" />
     <file path="/workitems_controller.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1389241415235" ignored="false" />
     <file path="/20140104131452_add_isgroup_to_category.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1388841348775" ignored="false" />
-    <file path="/devise.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1388971018603" ignored="false" />
+    <file path="/devise.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391215608667" ignored="false" />
     <file path="/20140104144505_add_devise_to_users.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1388847025728" ignored="false" />
-    <file path="/application.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1388847556488" ignored="false" />
+    <file path="/application.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391475724750" ignored="false" />
     <file path="/20140105222328_add_name_to_user.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1388960919119" ignored="false" />
     <file path="/20140105222917_create_user_photos.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1388961097223" ignored="false" />
-    <file path="/application_controller.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1389199821202" ignored="false" />
-    <file path="/users_controller.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1389195447640" ignored="false" />
+    <file path="/application_controller.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391554097352" ignored="false" />
+    <file path="/users_controller.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391214520604" ignored="false" />
     <file path="$PROJECT_DIR$/../../termscout/MVP/web_app/MVPClient/app/leases/index.html" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1389030802064" ignored="false" />
+    <file path="$PROJECT_DIR$/../../termscout/MVP/app/views/v1/user_feedback/index.rabl" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1390887594306" ignored="false" />
+    <file path="$PROJECT_DIR$/../../termscout/MVP/app/models/user_feedback.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1390887271388" ignored="false" />
+    <file path="/user_feedback.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1390887271388" ignored="false" />
+    <file path="$PROJECT_DIR$/../../termscout/MVP/app/views/users/show.json.jbuilder" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391216165316" ignored="false" />
+    <file path="$PROJECT_DIR$/../../termscout/MVP/app/controllers/v1/sessions_controller.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391632304825" ignored="false" />
+    <file path="/sessions_controller.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391529096668" ignored="false" />
+    <file path="$PROJECT_DIR$/../../termscout/MVP/app/controllers/users_controller.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391216165316" ignored="false" />
+    <file path="$PROJECT_DIR$/../../termscout/MVP/config/initializers/devise.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391551028979" ignored="false" />
+    <file path="$PROJECT_DIR$/../../termscout/MVP/db/migrate/20140201004946_add_devise_to_users.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391215882736" ignored="false" />
+    <file path="$PROJECT_DIR$/../../termscout/MVP/config.ru" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391649627290" ignored="false" />
+    <file path="/config.ru" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391630318992" ignored="false" />
+    <file path="$PROJECT_DIR$/../../termscout/MVP/Gemfile.lock" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391473972163" ignored="false" />
+    <file path="$PROJECT_DIR$/../../termscout/MVP/config/initializers/secret_token.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391551028979" ignored="false" />
+    <file path="/secret_token.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391473745787" ignored="false" />
+    <file path="$PROJECT_DIR$/../../termscout/MVP/config/application.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391632304825" ignored="false" />
+    <file path="$PROJECT_DIR$/../../termscout/MVP/app/controllers/api_controller.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391632304825" ignored="false" />
+    <file path="/api_controller.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391526441281" ignored="false" />
+    <file path="$PROJECT_DIR$/../../termscout/MVP/app/controllers/application_controller.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391649627290" ignored="false" />
+    <file path="$PROJECT_DIR$/../../termscout/MVP/web_app/MVPClient/app/services/appsecurity.js" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391552361391" ignored="false" />
+    <file path="$PROJECT_DIR$/../../termscout/MVP/app/controllers/v1/user_feedback_controller.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391551028979" ignored="false" />
+    <file path="$PROJECT_DIR$/../../termscout/MVP/app/controllers/v1/users_controller.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391551028979" ignored="false" />
+    <file path="$PROJECT_DIR$/../../termscout/MVP/app/controllers/v1/subscriptions_controller.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391551028979" ignored="false" />
+    <file path="$PROJECT_DIR$/../../termscout/MVP/app/helpers/api_helper.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391632304825" ignored="false" />
+    <file path="$PROJECT_DIR$/../../termscout/MVP/app/controllers/v1/organizations_controller.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391551028979" ignored="false" />
+    <file path="$PROJECT_DIR$/../../termscout/MVP/app/controllers/v1/settings_controller.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391632304825" ignored="false" />
+    <file path="$PROJECT_DIR$/../../termscout/MVP/app/controllers/v1/alerts_controller.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391632304825" ignored="false" />
+    <file path="$PROJECT_DIR$/../../termscout/MVP/app/controllers/v1/leases_controller.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391632304825" ignored="false" />
+    <file path="$PROJECT_DIR$/../../termscout/MVP/lib/user_sanitizer.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391649627290" ignored="false" />
+    <file path="/user_sanitizer.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391638116979" ignored="false" />
+    <file path="$PROJECT_DIR$/../../termscout/MVP/config/initializers/sanitizers.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391554176313" ignored="false" />
+    <file path="/sanitizers.rb" changelist="024fa96d-f417-4578-a0fe-4846223f3f9f" time="1391554176313" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,61 +150,16 @@
       <file leaf-file-name="application_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="80" selection-start="653" selection-end="653" vertical-scroll-proportion="0.0">
+            <state line="7" column="0" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="certifications_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/certifications_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="0" selection-start="863" selection-end="863" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.json.jbuilder" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/certifications/index.json.jbuilder">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_category.json.jbuilder" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/categories/_category.json.jbuilder">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="workitems_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/workitems_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="20" selection-start="225" selection-end="225" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="categories_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/categories_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="4" selection-start="1478" selection-end="1600" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users_controller.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="users_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="161" selection-end="161" vertical-scroll-proportion="0.0">
+            <state line="19" column="46" selection-start="475" selection-end="475" vertical-scroll-proportion="0.4679803">
               <folding />
             </state>
           </provider>
@@ -184,14 +168,68 @@
       <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="2" selection-start="230" selection-end="230" vertical-scroll-proportion="0.0">
+            <state line="14" column="26" selection-start="377" selection-end="377" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <file leaf-file-name="certifications_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/certifications_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="85" column="53" selection-start="2436" selection-end="2436" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/client/app/certifications/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="44" column="62" selection-start="1637" selection-end="1637" vertical-scroll-proportion="-16.875">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/application.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="38" selection-start="889" selection-end="889" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="devise.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/initializers/devise.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Gemfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="23" selection-start="978" selection-end="978" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gemfile.lock" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Gemfile.lock">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="85" column="137" selection-start="2123" selection-end="2123" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="environment.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/environment.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
@@ -217,8 +255,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/categories/index_flat.json.jbuilder" />
-        <option value="$PROJECT_DIR$/app/views/categories/show.json.jbuilder" />
         <option value="$PROJECT_DIR$/db/migrate/20140104144505_add_devise_to_users.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/config/application.rb" />
@@ -226,13 +262,15 @@
         <option value="$PROJECT_DIR$/db/migrate/20140105222328_add_name_to_user.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20140105222917_create_user_photos.rb" />
         <option value="$PROJECT_DIR$/config/initializers/devise.rb" />
-        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/categories_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/certifications_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/workitems_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/certifications_controller.rb" />
+        <option value="$PROJECT_DIR$/Gemfile.lock" />
+        <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/public/client/app/certifications/index.html" />
       </list>
     </option>
   </component>
@@ -244,10 +282,10 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="580" />
-    <option name="y" value="288" />
-    <option name="width" value="1280" />
-    <option name="height" value="726" />
+    <option name="x" value="8" />
+    <option name="y" value="22" />
+    <option name="width" value="1920" />
+    <option name="height" value="1006" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -275,6 +313,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="RailsProjectView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -303,14 +343,92 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CertTracker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CertTracker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CertTracker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CertTracker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CertTracker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CertTracker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="certifications" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CertTracker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CertTracker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="RailsProjectView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -563,24 +681,24 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="580" y="288" width="1280" height="726" extended-state="1" />
+    <frame x="8" y="22" width="1920" height="1006" extended-state="7" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32087228" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25688818" sideWeight="0.6881188" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31188118" sideWeight="0.49918962" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13927428" sideWeight="0.7189616" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28103837" sideWeight="0.49918962" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30795455" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32841328" sideWeight="0.16614583" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32731378" sideWeight="0.16614583" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22477064" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22460496" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -662,104 +780,108 @@
           <option name="timeStamp" value="40" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="41" />
+      <option name="time" value="62" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.rbenv/versions/2.0.0-rc1/lib/ruby/gems/2.0.0/gems/rack-1.5.2/lib/rack/handler/webrick.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="0" selection-start="2269" selection-end="2269" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.rbenv/versions/2.0.0-rc1/lib/ruby/gems/2.0.0/gems/activesupport-4.0.0/lib/active_support/callbacks.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="404" column="0" selection-start="12908" selection-end="12908" vertical-scroll-proportion="0.33263597" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.rbenv/versions/2.0.0-rc1/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_controller/metal/implicit_render.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="2" selection-start="191" selection-end="191" vertical-scroll-proportion="0.27494907" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user_photo.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/certifications/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.rbenv/versions/2.0.0-rc1/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_controller/metal/rescue.rb">
+    <entry file="file://$PROJECT_DIR$/app/helpers/certifications_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="0" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.0" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20140105222917_create_user_photos.rb">
+    <entry file="file://$PROJECT_DIR$/app/helpers/users_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="47" selection-start="340" selection-end="340" vertical-scroll-proportion="0.33175355" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/workitems_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="80" selection-start="653" selection-end="653" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/certifications_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="863" selection-end="863" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/workitems_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="20" selection-start="225" selection-end="225" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/categories_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="4" selection-start="1478" selection-end="1600" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="161" selection-end="161" vertical-scroll-proportion="0.0">
+        <state line="7" column="0" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="2" selection-start="230" selection-end="230" vertical-scroll-proportion="0.0">
+        <state line="14" column="26" selection-start="377" selection-end="377" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+    <entry file="file://$PROJECT_DIR$/config/application.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="38" selection-start="889" selection-end="889" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/environment.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/categories/_category.json.jbuilder">
+    <entry file="file://$PROJECT_DIR$/config/initializers/devise.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/certifications/show.json.jbuilder">
+    <entry file="file://$PROJECT_DIR$/config/boot.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+        <state line="3" column="0" selection-start="108" selection-end="108" vertical-scroll-proportion="0.073891625" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/certifications/index.json.jbuilder">
+    <entry file="file://$PROJECT_DIR$/Gemfile.lock">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="85" column="137" selection-start="2123" selection-end="2123" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="23" selection-start="978" selection-end="978" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/certifications_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="53" selection-start="2436" selection-end="2436" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/client/app/certifications/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="62" selection-start="1637" selection-end="1637" vertical-scroll-proportion="-16.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="46" selection-start="475" selection-end="475" vertical-scroll-proportion="0.4679803">
           <folding />
         </state>
       </provider>
