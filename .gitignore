@@ -17,3 +17,6 @@
 
 #Ignore the rubyminde & webstorm files
 .idea/
+
+#Custom files to ignore
+.DS_Store
