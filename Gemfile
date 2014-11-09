@@ -18,6 +18,7 @@ group :assets do
 end
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+gem 'rspec-rails', '~> 2.14.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

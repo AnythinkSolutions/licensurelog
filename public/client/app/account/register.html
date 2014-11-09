@@ -54,8 +54,8 @@
                                 <label class="label-checkbox inline">
                                     <input type="checkbox" class="regular-checkbox chk-delete" ng-model="registerUser.rememberMe" />
                                     <span class="custom-checkbox info bounceIn animation-delay4"></span>
+                                    Remember me
                                 </label>
-                                Remember me
                             </div>
 
                             <div class="form-group">
@@ -64,7 +64,14 @@
                                     <span class="custom-checkbox info bounceIn animation-delay2"></span>
                                     I accept the agreement.
                                 </label>
-                            </div><!-- /form-group -->
+                            </div>
+
+                            <div class="form-group">
+                                <label>Licensure</label>
+                                <select class="form-control input-sm bounceIn animation-delay2" ng-model="registerUser.license" ng-options="l.id as l.name for l in licenses ">
+                                    <option value="">Select License</option>
+                                </select>
+                            </div>
 
                             <div class="seperator"></div>
                             <div class="form-group">

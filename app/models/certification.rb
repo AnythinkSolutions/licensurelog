@@ -25,6 +25,48 @@ class Certification < ActiveRecord::Base
 
   end
 
+  def self.create_from_template(user_id, template_id)
+
+    #template id is negative, so if necessary, multiply the value by -1
+    template_id = template_id > 0 ? template_id * -1 : template_id
+
+    template_cert = Certification.find(template_id)
+    cert = Certification.create!({
+        :name => template_cert.name,
+        :description => template_cert.description,
+        :begin_date => DateTime.now,
+        :user_id => user_id
+                                 })
+
+    template_categories = Category.where(:certification_id => template_id)
+    list = {}
+
+    #create all the categories first
+    template_categories.each do |c|
+      cat = Category.create!({
+          :certification_id => cert.id,
+          :user_id => user_id,
+          :name => c.name,
+          :description => c.description,
+          :required_hours => c.required_hours,
+          :cap => c.cap,
+          :is_group => c.is_group})
+
+      list[c.id] = cat
+    end
+
+    #now, go through and figure out which ones are children of another one
+    template_categories.each do |c|
+      if c.parent_id.present?
+        list[c.id].update_attributes!({:parent_id => list[c.parent_id].id})
+      end
+    end
+
+    #return the certification
+    cert
+
+  end
+
 
 
 end

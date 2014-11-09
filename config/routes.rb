@@ -1,6 +1,7 @@
 CertTracker::Application.routes.draw do
 
-  devise_for :users
+  devise_for :users, skip: [:registrations]
+
   post '/workitems/addorupdate' => 'workitems#add_or_update', :as => :add_or_update_hours
 
   get '/users/remembered' => 'users#remembered_user', :as => :remembered_user
@@ -9,6 +10,7 @@ CertTracker::Application.routes.draw do
   resources :categories
   resources :certifications
   resources :users
+  resources :registrations
 
   root to: 'home#index'
 

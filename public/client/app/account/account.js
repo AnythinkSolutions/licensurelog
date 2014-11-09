@@ -103,32 +103,35 @@ shell.controller('loginController', ['$scope', '$http', '$location', '$routePara
 }]);
 
 shell.controller('registerController', ['$http', '$scope', '$location', 'appsecurity', function($http, $scope, $location, appsecurity){
-    $scope.registerUser = {name: null, email: null, current_password: null, password: null, password_confirmation: null, rememberMe: true};
+    $scope.registerUser = {name: null, email: null, license: null, current_password: null, password: null, password_confirmation: null, rememberMe: true};
     $scope.registerError = {message: null, errors: {}};
+    $scope.licenses = [{id: -1, name: 'LCSW'}];
 
     $scope.register = function(){
         $scope.submit(
             {
                 method: 'POST',
                 url: '../users.json',
-                data: { user:
+                data: {
+                    user:
                     {
                         name: $scope.registerUser.name,
                         email : $scope.registerUser.email,
                         password: $scope.registerUser.password,
                         password_confirmation: $scope.registerUser.password_confirmation,
                         remember_me: $scope.registerUser.rememberMe
-                    }
+                    },
+                    license: $scope.registerUser.license
                 },
                 successMessage: "You have been registered and logged in.  A confirmation email has been sent to your email address.  You must click the link in that email to continue using licensure log beyond 3 days.",
                 errorEntity: $scope.registerError,
                 successCallback: function(data, status){
                     appsecurity.initializeUser(data);
-                    $location.path('/');
+                    $location.path('/login');
                 }
             }
         );
-    }
+    };
 
     $scope.submit = function(parameters){
         $scope.resetMessages();
@@ -166,18 +169,18 @@ shell.controller('registerController', ['$http', '$scope', '$location', 'appsecu
                     }
                 }
             });
-    }
+    };
 
     $scope.resetMessages = function(){
         $scope.registerError.message = null;
         $scope.registerError.errors = {};
-    }
+    };
 
     $scope.resetUsers = function(){
         $scope.registerUser.email = null;
         $scope.registerUser.password = null;
         $scope.registerUser.password_confirmation = null;
-    }
+    };
 }]);
 
 shell.controller('profileController', ['$http', '$scope', 'appsecurity', function($http, $scope, appsecurity){

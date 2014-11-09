@@ -20,8 +20,6 @@
 
 #wrapper {
   min-height: 600px; }
-  #wrapper #main-container {
-    min-height: 600px; }
 
 #home-view #certification-wrapper #certification-list {
   list-style: none;
